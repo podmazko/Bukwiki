@@ -1,0 +1,123 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3bydmfmtb3wi"]
+
+[ext_resource type="Script" uid="uid://cc7vms2e7xenj" path="res://Scenes/MainScene.gd" id="1_6l7je"]
+[ext_resource type="Texture2D" uid="uid://co0q3hqfyel5f" path="res://Assets/Images/CharReading.png" id="2_6l7je"]
+[ext_resource type="AudioStream" uid="uid://j7k38tsapjbo" path="res://Assets/Music/Positive-Orchestral-Theme-_4.ogg" id="3_jv6wh"]
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_jv6wh"]
+
+[node name="MainScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6l7je")
+
+[node name="BgColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.996078, 0.964706, 0.862745, 1)
+
+[node name="Menu" type="HBoxContainer" parent="BgColor"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -882.0
+offset_top = -640.0
+offset_right = 882.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharA" type="TextureRect" parent="BgColor/Menu"]
+layout_mode = 2
+texture = ExtResource("2_6l7je")
+
+[node name="LevelsPositions" type="Control" parent="BgColor/Menu/CharA"]
+anchors_preset = 0
+offset_left = 710.0
+offset_top = 119.0
+offset_right = 710.0
+offset_bottom = 119.0
+scale = Vector2(0.85, 0.85)
+
+[node name="Buttons" type="VBoxContainer" parent="BgColor/Menu"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="BgColor/Menu/Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "Приключения буквиков"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Play" type="Button" parent="BgColor/Menu/Buttons"]
+layout_mode = 2
+focus_mode = 0
+text = "Начать игру
+"
+
+[node name="PlayOnline" type="Button" parent="BgColor/Menu/Buttons"]
+layout_mode = 2
+focus_mode = 0
+disabled = true
+text = "Начать игру с учителем
+"
+
+[node name="Exit" type="Button" parent="BgColor/Menu/Buttons"]
+visible = false
+layout_mode = 2
+focus_mode = 0
+text = "Выход
+"
+
+[node name="SegmentGrp" type="Control" parent="BgColor"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Blocker" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.00392157)
+
+[node name="LevelLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "Уровень 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jv6wh")
+volume_db = -10.0
+pitch_scale = 1.1
+autoplay = true
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPolyphonic_jv6wh")
