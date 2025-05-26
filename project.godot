@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Буквики!"
-run/main_scene="uid://b3bydmfmtb3wi"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+run/main_scene="res://Scenes/main_scene.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [audio]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b3bydmfmtb3wi"]
 
-[ext_resource type="Script" uid="uid://cc7vms2e7xenj" path="res://Scenes/MainScene.gd" id="1_6l7je"]
+[ext_resource type="Script" path="res://Scenes/MainScene.gd" id="1_6l7je"]
 [ext_resource type="Texture2D" uid="uid://co0q3hqfyel5f" path="res://Assets/Images/CharReading.png" id="2_6l7je"]
 [ext_resource type="AudioStream" uid="uid://j7k38tsapjbo" path="res://Assets/Music/Positive-Orchestral-Theme-_4.ogg" id="3_jv6wh"]
 
