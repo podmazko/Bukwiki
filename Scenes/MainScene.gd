@@ -28,6 +28,10 @@ func _ready():
 	button_exit.pressed.connect(_on_exit_pressed)
 	PlayerData.NextSegment.connect(next_segment)
 	
+	var _lvl_label:Label=$BgColor/Menu/CharA/Label
+	_lvl_label.pivot_offset=_lvl_label.size*Vector2(0.5,0.5)
+	_lvl_label.scale=Vector2(0.5,0.0)
+	
 	base_params.append(menu_buttons.position.x)
 	base_params.append(menu_char.position.x)
 	_setup_levels_buttons()
@@ -74,9 +78,13 @@ func _on_play_pressed(): #show level choosing UI
 	var _tween:Tween=create_tween().set_parallel(true)
 	_tween.tween_property(menu_buttons, "position:x", base_params[0]+2000, 0.25).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	_tween.tween_property(menu_buttons, "modulate:a", 0.0, 0.05).set_delay(0.2)
-	_tween.tween_property(menu_char, "position:x", base_params[0]-50, 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
-	_tween.tween_property(menu_char, "position:y", 110, 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
+	_tween.tween_property(menu_char, "position:x", base_params[0]+100, 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
+	_tween.tween_property(menu_char, "position:y", 400, 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
 	_tween.tween_property(menu_char, "scale", Vector2(0.8,0.8), 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
+	#choose level label
+	_tween.tween_property($BgColor/Menu/CharA/Label, "scale", Vector2(1,1), 1.0).set_delay(1.2)\
+			.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	_tween.tween_callback(PlayerData.emit_signal.bind("SFX","B")).set_delay(1.2)
 	
 	#buttons appearing
 	var _offset:=0.3
