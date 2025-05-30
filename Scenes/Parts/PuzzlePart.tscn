@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bajuoyiw7ovj7"]
+
+[ext_resource type="Script" path="res://Scenes/Parts/PuzzlePart.gd" id="1_i73i7"]
+
+[node name="PuzzlePart" type="Label"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1843.0
+offset_bottom = -1022.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+text = "sad"
+script = ExtResource("1_i73i7")

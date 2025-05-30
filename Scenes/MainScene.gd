@@ -158,7 +158,8 @@ func next_segment()->void:
 	
 	
 	current_segment_node=_inst
-	current_segment_node.appear_anim()
+	
+	current_segment_node.call_deferred("appear_anim")
 
 func on_level_finished()->void:
 	_level_started=false
