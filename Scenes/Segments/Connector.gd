@@ -54,6 +54,9 @@ func _init_segment(_segment_info_words:Array)->void:
 		_tween.tween_property(_img,"scale",Vector2(1.0,1.0),1.3).set_delay(_delay)\
 			.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT).from(Vector2(0.4,0.4))
 		_tween.tween_property(_img,"modulate:a",1.0,0.3).set_delay(_delay)
+		
+		_tween.tween_callback(PlayerData.emit_signal.bind("SFX","B")).set_delay(_delay)
+		
 	
 func appear_anim()->void:
 	var _tween:Tween=create_tween().set_parallel(true)
