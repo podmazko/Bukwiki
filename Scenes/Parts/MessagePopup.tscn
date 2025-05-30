@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfbi2ikbl4w8b"]
+
+[ext_resource type="Texture2D" uid="uid://cwn36hwuxni18" path="res://Assets/Images/Popup/Fear.png" id="1_4ts40"]
+[ext_resource type="Script" path="res://Scenes/Parts/MessagePopup.gd" id="1_sj20o"]
+
+[node name="MessagePopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_sj20o")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -826.0
+offset_top = -543.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = -130
+alignment = 2
+
+[node name="Bubble" type="Label" parent="HBox"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.0509804, 0.0509804, 0.0509804, 0.752941)
+text = "Как много слов!
+Что же они все означают?"
+horizontal_alignment = 1
+
+[node name="Character" type="TextureRect" parent="HBox"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_4ts40")

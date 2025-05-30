@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://jqsydjtlj2aq"]
+[gd_scene load_steps=2 format=3 uid="uid://jqsydjtlj2aq"]
 
 [ext_resource type="Script" path="res://Scenes/Segments/Connector.gd" id="1_r5jys"]
-[ext_resource type="Texture2D" uid="uid://cwn36hwuxni18" path="res://Assets/Images/Emotions/PopupFear.png" id="2_7yks7"]
 
 [node name="Connector" type="Control"]
 layout_mode = 3
@@ -51,31 +50,3 @@ theme_override_constants/h_separation = 25
 theme_override_constants/v_separation = 10
 alignment = 1
 last_wrap_alignment = 2
-
-[node name="HBox" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -826.0
-offset_top = -543.0
-grow_horizontal = 0
-grow_vertical = 0
-mouse_filter = 2
-theme_override_constants/separation = -130
-alignment = 2
-
-[node name="Bubble" type="Label" parent="HBox"]
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_colors/font_color = Color(0.0509804, 0.0509804, 0.0509804, 0.752941)
-text = "Как много слов!
-Что же они все означают?"
-horizontal_alignment = 1
-
-[node name="Character" type="TextureRect" parent="HBox"]
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("2_7yks7")

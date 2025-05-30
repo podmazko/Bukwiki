@@ -1,16 +1,11 @@
 extends Control
 
-@onready var PopupNode:HBoxContainer=$HBox
-
 @onready var WordsGrp:HFlowContainer=$HFlow
 @onready var ImagesGrp:HFlowContainer=$HFlow2
 
 var LavelCounter:int
 
 func _init_segment(_segment_info_words:Array)->void:
-	PopupNode.scale=Vector2(0,0)
-	PopupNode.pivot_offset=PopupNode.size
-	
 	#prepare arrays
 	var _segment_info:Array=[_segment_info_words,[]]
 	var words_count:int=_segment_info[0].size()
@@ -62,19 +57,13 @@ func _init_segment(_segment_info_words:Array)->void:
 	
 func appear_anim()->void:
 	var _tween:Tween=create_tween().set_parallel(true)
-	_tween.tween_callback(message.bind("Как много слов!\nЧто же они все означают?",Vector2(0.5,0)) )\
+	_tween.tween_callback(message.bind("Как много слов!\nЧто же они все означают?","Fear",Vector2(0.5,0)) )\
 				.set_delay(1)
 
 
 ###### Inner Funtions
-var _popup_scale:=Vector2(0.9,0.9)
-func message(_text:String,from_scale:=Vector2(1.05,0.95))->void:
-	PopupNode.scale=from_scale*_popup_scale
-	$HBox/Bubble.text=_text+"\n"
-	
-	var _tween:Tween=create_tween().set_parallel(true)
-	_tween.tween_property(PopupNode,"scale",_popup_scale,0.5)\
-		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+func message(_text:String,img:String,from_scale:=Vector2(1.05,0.95))->void:
+	PlayerData.emit_signal("ShowMessage",_text,img,from_scale)
 
 
 var V_message_n:int=0
@@ -110,9 +99,9 @@ func object_input(event:InputEvent,object)->void:
 				
 				PlayerData.emit_signal("SFX","A")
 				
-				message(["Огоо, ты молодец!","Правильно!"][V_message_n])
+				message(["Ого, ты молодец!","Правильно!","Умничка!","Верно!","Супер!"][V_message_n],"Happy")
 				V_message_n+=1
-				if V_message_n==2:
+				if V_message_n==5:
 					V_message_n=0
 				
 				current_selected=null
@@ -127,7 +116,7 @@ func object_input(event:InputEvent,object)->void:
 					pass
 				current_selected=null
 
-				message(["Ой! Что-то не то...","Ух, не подошло"][X_message_n])
+				message(["Ой! Что-то не то...","Ух, не подошло"][X_message_n],"Fear")
 				X_message_n+=1
 				if X_message_n==2:
 					X_message_n=0
@@ -143,8 +132,8 @@ func _deselect_current_object_anim(_tween:Tween)->void:
 
 
 func finish_level()->void:
+	PlayerData.emit_signal("HideMessage")
 	var _tween:Tween=create_tween().set_parallel(true)
-	_tween.tween_property(PopupNode,"modulate:a",0,1.0)
 	_tween.tween_property(WordsGrp,"modulate:a",0,1.0)
 	
 	var _offset:=0.8 # wait for last right answer anim finish

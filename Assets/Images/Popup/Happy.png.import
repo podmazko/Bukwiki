@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwn36hwuxni18"
-path="res://.godot/imported/PopupFear.png-6a8cd5d71cdbd50bfc33e9389372b726.ctex"
+uid="uid://c1opnfrl1t86y"
+path="res://.godot/imported/Happy.png-b14433a3608fff1dc490e67680d5693d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Emotions/PopupFear.png"
-dest_files=["res://.godot/imported/PopupFear.png-6a8cd5d71cdbd50bfc33e9389372b726.ctex"]
+source_file="res://Assets/Images/Popup/Happy.png"
+dest_files=["res://.godot/imported/Happy.png-b14433a3608fff1dc490e67680d5693d.ctex"]
 
 [params]
 
