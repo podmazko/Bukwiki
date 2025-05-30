@@ -3,15 +3,13 @@ extends Control
 @onready var LevelButton:PackedScene=preload("res://Scenes/Parts/LevelButton.tscn")
 
 
-
-
-
 @onready var LevelLabel:Label = $LevelLabel
 
 @onready var button_play = $BgColor/Menu/Buttons/Play
 @onready var button_play_online = $BgColor/Menu/Buttons/PlayOnline
 @onready var button_exit = $BgColor/Menu/Buttons/Exit
 
+@onready var menu_ = $BgColor/Menu
 @onready var menu_buttons = $BgColor/Menu/Buttons
 @onready var menu_char = $BgColor/Menu/CharA
 @onready var levels_buttons= $BgColor/Menu/CharA/LevelsPositions
@@ -71,9 +69,11 @@ func _setup_levels_buttons()->void:
 
 
 func _on_play_pressed(): #show level choosing UI
+	for _b in menu_buttons.get_children():
+		if _b is Button:
+			_b.disabled=true
 	_UI_blocker(2.0)
 	PlayerData.emit_signal("SFX","B")
-	
 	
 	var _tween:Tween=create_tween().set_parallel(true)
 	_tween.tween_property(menu_buttons, "position:x", base_params[0]+2000, 0.25).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
@@ -86,7 +86,7 @@ func _on_play_pressed(): #show level choosing UI
 			.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 	_tween.tween_callback(PlayerData.emit_signal.bind("SFX","B")).set_delay(1.2)
 	
-	#buttons appearing
+	#level buttons appearing
 	var _offset:=0.3
 	var _buttons:Array=levels_buttons.get_children()
 	for _button_n in levels_buttons.get_child_count():
@@ -117,6 +117,7 @@ func start_level(_level_n:int)->void:
 	_tween.tween_property(menu_char, "position:x", menu_char.position.x+100, 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	_tween.tween_property(menu_char, "rotation_degrees", 10, 0.8).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
 	_tween.tween_property(menu_char, "modulate:a", 0.0, 0.5)
+	_tween.tween_callback(menu_.set.bind("visible",false)).set_delay(0.5)
 	
 	var _level_info:Array=Data.LevelsInfo[PlayerData.current_level_in_play]
 	

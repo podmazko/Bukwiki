@@ -44,7 +44,7 @@ func appear_anim()->void:
 			.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT).from(Vector2(0.2,0.2))
 		_tween.tween_callback(PlayerData.emit_signal.bind("SFX","B")).set_delay(_delay)
 	
-	_tween.tween_callback(message.bind("Нужно собрать слоги,\nчтобы они превратились\nв слово","Fear",Vector2(0.5,0)) )\
+	_tween.tween_callback(message.bind("Как же собрать слоги\nобратно в слова?","Fear",Vector2(0.5,0)) )\
 				.set_delay(1)
 
 
