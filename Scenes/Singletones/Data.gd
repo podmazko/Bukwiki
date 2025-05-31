@@ -53,7 +53,7 @@ var SegmentsInfo:={
 	},
 	"Puzzle":{ #Images name + Text
 		"preload":preload("res://Scenes/Segments/Puzzle.tscn"),
-		0:["СУНДУК","ПИРАТ","КЕПКА","ВОЛНА","СНЕГИРЬ","КНИГА"],
+		0:["СУНДУК","ПИРАТ","КЕПКА","ВОЛНА","КУБИКИ","КНИГА"],
 	},
 	
 }

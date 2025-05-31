@@ -1,15 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://bajuoyiw7ovj7"]
+[gd_scene load_steps=3 format=3 uid="uid://bajuoyiw7ovj7"]
 
 [ext_resource type="Script" path="res://Scenes/Parts/PuzzlePart.gd" id="1_i73i7"]
+[ext_resource type="Texture2D" uid="uid://xq6ehtlb7d0r" path="res://Assets/Images/Puzzle/R1.png" id="2_onqlt"]
 
-[node name="PuzzlePart" type="Label"]
+[node name="PuzzlePart" type="NinePatchRect"]
+custom_minimum_size = Vector2(300, 150)
+offset_left = -33.5
+offset_top = -10.0
+offset_right = 266.5
+offset_bottom = 118.0
+mouse_filter = 0
+texture = ExtResource("2_onqlt")
+patch_margin_left = 50
+patch_margin_right = 50
+script = ExtResource("1_i73i7")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1843.0
-offset_bottom = -1022.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 0
-text = "sad"
-script = ExtResource("1_i73i7")
+theme_override_font_sizes/font_size = 90
+text = "!"
+horizontal_alignment = 1
+vertical_alignment = 1
