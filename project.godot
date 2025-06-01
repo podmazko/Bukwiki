@@ -23,6 +23,7 @@ driver/output_latency.web=100
 
 Data="*res://Scenes/Singletones/Data.gd"
 PlayerData="*res://Scenes/Singletones/PlayerData.gd"
+Globals="*res://Scenes/Singletones/Globals.gd"
 
 [display]
 

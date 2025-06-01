@@ -2,8 +2,8 @@ extends Node
 
 
 
-var LevelsInfo:={
-	1:["Первая встреча",[ ["Puzzle",0],["Monolog",11],["Monolog",12],["Connector",0],["Monolog",13],["Connector",1],["Monolog",14],["Monolog",15] ]],
+var LevelsInfo:={ #["Puzzle",0],
+	1:["Первая встреча",[ ["Monolog",11],["Monolog",12],["Connector",0],["Monolog",13],["Connector",1],["Monolog",14],["Monolog",15] ]],
 	2:[],
 	3:[],
 	4:[],

@@ -6,8 +6,8 @@ extends Control
 func _ready() -> void:
 	PopupNode.scale=Vector2(0,0)
 	PopupNode.pivot_offset=PopupNode.size
-	PlayerData.ShowMessage.connect(message)
-	PlayerData.HideMessage.connect(hide_message)
+	Globals.ShowMessage.connect(message)
+	Globals.HideMessage.connect(hide_message)
 
 ###### Inner Funtions
 var _popup_scale:=Vector2(0.9,0.9)

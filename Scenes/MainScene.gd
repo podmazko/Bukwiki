@@ -24,7 +24,7 @@ func _ready():
 	button_play.pressed.connect(_on_play_pressed)
 	button_play_online.pressed.connect(_on_play_online_pressed)
 	button_exit.pressed.connect(_on_exit_pressed)
-	PlayerData.NextSegment.connect(next_segment)
+	Globals.NextSegment.connect(next_segment)
 	
 	var _lvl_label:Label=$BgColor/Menu/CharA/Label
 	_lvl_label.pivot_offset=_lvl_label.size*Vector2(0.5,0.5)
@@ -37,7 +37,7 @@ func _ready():
 	#set SFX
 	$SFX.play()
 	SFXplayback=$SFX.get_stream_playback()
-	PlayerData.SFX.connect(SFX)
+	Globals.SFX.connect(SFX)
 	
 	
 func SFX(_type:String)->void:
@@ -73,7 +73,7 @@ func _on_play_pressed(): #show level choosing UI
 		if _b is Button:
 			_b.disabled=true
 	_UI_blocker(2.0)
-	PlayerData.emit_signal("SFX","B")
+	Globals.emit_signal("SFX","B")
 	
 	var _tween:Tween=create_tween().set_parallel(true)
 	_tween.tween_property(menu_buttons, "position:x", base_params[0]+2000, 0.25).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
@@ -84,7 +84,7 @@ func _on_play_pressed(): #show level choosing UI
 	#choose level label
 	_tween.tween_property($BgColor/Menu/CharA/Label, "scale", Vector2(1,1), 1.0).set_delay(1.2)\
 			.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
-	_tween.tween_callback(PlayerData.emit_signal.bind("SFX","B")).set_delay(1.2)
+	_tween.tween_callback(Globals.emit_signal.bind("SFX","B")).set_delay(1.2)
 	
 	#level buttons appearing
 	var _offset:=0.3
@@ -102,11 +102,11 @@ func _on_play_pressed(): #show level choosing UI
 
 var _level_started:=false
 func start_level(_level_n:int)->void:
-	PlayerData.emit_signal("SFX","B")
+	Globals.emit_signal("SFX","B")
 	if _level_started: #bugs with clicking on level buttons
 		return
 	_level_started=true
-	PlayerData.current_level_in_play=_level_n
+	Globals.current_level_in_play=_level_n
 
 	#block inputs
 	_UI_blocker(3.0)
@@ -119,14 +119,14 @@ func start_level(_level_n:int)->void:
 	_tween.tween_property(menu_char, "modulate:a", 0.0, 0.5)
 	_tween.tween_callback(menu_.set.bind("visible",false)).set_delay(0.5)
 	
-	var _level_info:Array=Data.LevelsInfo[PlayerData.current_level_in_play]
+	var _level_info:Array=Data.LevelsInfo[Globals.current_level_in_play]
 	
 	level_flow_data=_level_info[1].duplicate()
 	_tween.tween_callback(next_segment).set_delay(3.5)
 	
 	#screen change animation
 	LevelLabel.modulate.a=0.00
-	LevelLabel.text="День "+str(PlayerData.current_level_in_play)+"\n"+_level_info[0]
+	LevelLabel.text="День "+str(Globals.current_level_in_play)+"\n"+_level_info[0]
 	_tween.tween_property(LevelLabel, "modulate:a", 1.0, 1.0)
 	_tween.tween_property(LevelLabel, "modulate:r", 1.25, 1.5)
 	_tween.tween_property(LevelLabel, "modulate:g", 1.25, 1.5)
@@ -170,8 +170,8 @@ func on_level_finished()->void:
 	current_segment_node=null
 		
 		
-	if PlayerData.LevelsCompleted<PlayerData.current_level_in_play:
-		PlayerData.LevelsCompleted=PlayerData.current_level_in_play
+	if PlayerData.LevelsCompleted<Globals.current_level_in_play:
+		PlayerData.LevelsCompleted=Globals.current_level_in_play
 
 	#block inputs
 	_UI_blocker(2.5)
@@ -185,7 +185,7 @@ func on_level_finished()->void:
 	_tween.tween_property(menu_char, "modulate:a", 1.0, 0.5)
 		
 	print("обнови кнопки после прохождения!")
-	#PlayerData.current_level_in_play
+	#Globals.current_level_in_play
 
 @onready var Blocker:Control = $Blocker
 var blocker_tween:Tween

@@ -55,7 +55,7 @@ func _init_segment(_segment_info_words:Array)->void:
 			.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT).from(Vector2(0.4,0.4))
 		_tween.tween_property(_img,"modulate:a",1.0,0.3).set_delay(_delay)
 		
-		_tween.tween_callback(PlayerData.emit_signal.bind("SFX","B")).set_delay(_delay)
+		_tween.tween_callback(Globals.emit_signal.bind("SFX","B")).set_delay(_delay)
 		
 	
 func appear_anim()->void:
@@ -66,7 +66,7 @@ func appear_anim()->void:
 
 ###### Inner Funtions
 func message(_text:String,img:String,from_scale:=Vector2(1.05,0.95))->void:
-	PlayerData.emit_signal("ShowMessage",_text,img,from_scale)
+	Globals.emit_signal("ShowMessage",_text,img,from_scale)
 
 
 var V_message_n:int=0
@@ -77,7 +77,7 @@ func object_input(event:InputEvent,object)->void:
 	if event.is_pressed():
 		var _obj_class:String=object.get_class()
 		var _tween:Tween=create_tween().set_parallel(true)
-		PlayerData.emit_signal("SFX","B")
+		Globals.emit_signal("SFX","B")
 		
 		if current_selected==null: #then select
 			current_selected=object
@@ -100,7 +100,7 @@ func object_input(event:InputEvent,object)->void:
 						.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
 					_tween.tween_property(i,"modulate",Color(1,1,1,0.3),0.5).from(Color(1.2,1.2,1.2,1.0))
 				
-				PlayerData.emit_signal("SFX","A")
+				Globals.emit_signal("SFX","A")
 				
 				message(["Ого, ты молодец!","Правильно!","Умничка!","Верно!","Супер!"][V_message_n],"Happy")
 				V_message_n+=1
@@ -135,7 +135,7 @@ func _deselect_current_object_anim(_tween:Tween)->void:
 
 
 func finish_level()->void:
-	PlayerData.emit_signal("HideMessage")
+	Globals.emit_signal("HideMessage")
 	var _tween:Tween=create_tween().set_parallel(true)
 	_tween.tween_property(WordsGrp,"modulate:a",0,1.0)
 	
@@ -145,17 +145,18 @@ func finish_level()->void:
 			.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 		_tween.tween_property(i,"modulate",Color(1.1,1.1,1.1,1),0.5).from(Color(0.5,0.5,0.5,0.3))\
 			.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT).set_delay(_offset)
-		_tween.tween_callback(PlayerData.emit_signal.bind("SFX","B")).set_delay(_offset)
+		_tween.tween_callback(Globals.emit_signal.bind("SFX","B")).set_delay(_offset)
 		
 		_offset+=0.1
 	
 	_tween.tween_property(self,"modulate:a",0,1.0).set_delay(2.0)
-	_tween.tween_callback(PlayerData.emit_signal.bind("NextSegment")).set_delay(3.0)
+	_tween.tween_callback(Globals.emit_signal.bind("NextSegment")).set_delay(3.0)
 
 	#main scene will call disappear anim after that
 
 func disappear_anim()->void:
 	queue_free()
+
 
 ###### UI Beuty
 
@@ -163,6 +164,7 @@ func _physics_process(delta: float) -> void:#Flow placing
 	WordsGrp.size.y=0.0
 	var _aimed_pos:float=WordsGrp.position.y+WordsGrp.size.y*WordsGrp.scale.y+25
 	ImagesGrp.position.y=lerp(ImagesGrp.position.y,_aimed_pos,delta*3)
+
 
 var current_hover:TextureRect
 func _hover_image(_img_node:TextureRect)->void:
@@ -175,6 +177,7 @@ func _hover_image(_img_node:TextureRect)->void:
 		var _tween:Tween=create_tween()
 		_tween.tween_property(_img_node,"scale",Vector2(1.0,1.0),0.8)\
 			.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT).from(Vector2(0.93,0.93))
+
 
 func _hover_image_exit()->void:
 	if current_hover!=null:

@@ -8,7 +8,7 @@ func _init_segment(_segment_info:Array)->void:
 
 
 func appear_anim()->void:
-	PlayerData.emit_signal("SFX","A")
+	Globals.emit_signal("SFX","A")
 	scale=Vector2(0,0)
 	modulate.a=0.0
 	var _tween:Tween=create_tween().set_parallel(true)
@@ -23,5 +23,5 @@ func disappear_anim()->void:
 
 
 func _on_button_pressed() -> void:
-	PlayerData.emit_signal("SFX","B")
-	PlayerData.emit_signal("NextSegment")
+	Globals.emit_signal("SFX","B")
+	Globals.emit_signal("NextSegment")
