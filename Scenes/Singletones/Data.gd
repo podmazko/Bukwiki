@@ -3,7 +3,7 @@ extends Node
 
 
 var LevelsInfo:={ #["Puzzle",0],
-	1:["Первая встреча",[ ["Monolog",11],["Monolog",12],["Connector",0],["Monolog",13],["Connector",1],["Monolog",14],["Monolog",15],["Puzzle",0] ]],
+	1:["Первая встреча",[["Monolog",11],["Monolog",12],["Connector",0],["Monolog",13],["Connector",1],["Monolog",14],["Monolog",15],["Puzzle",0] ]],
 	2:[],
 	3:[],
 	4:[],
@@ -53,7 +53,7 @@ var SegmentsInfo:={
 	},
 	"Puzzle":{ #Images name + Text
 		"preload":preload("res://Scenes/Segments/Puzzle.tscn"),
-		0:["СУНДУК","ПИРАТ","КЕПКА","ВОЛНА","КУБИКИ","КНИГА"],
+		0:["СУНДУК","ПИРАТ","ТУЧА","ВОЛНА","ЩЕНОК","КНИГА"],
 	},
 	
 }
