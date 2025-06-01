@@ -142,6 +142,7 @@ func next_segment()->void:
 	
 	#hide prev segment
 	if current_segment_node!=null: 
+		Globals.current_selected=null
 		current_segment_node.disappear_anim()
 	
 	#show next segment

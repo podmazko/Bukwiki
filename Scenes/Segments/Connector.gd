@@ -29,7 +29,7 @@ func _init_segment(_segment_info_words:Array)->void:
 		_inst.focus_mode=0
 		WordsGrp.add_child(_inst)
 		_inst.gui_input.connect(object_input.bind(_inst))
-		_inst.mouse_entered.connect(_hover_button.bind(_inst))
+		_inst.mouse_entered.connect(Globals._hover_button.bind(_inst))
 		#text appearing anim
 		_inst.pivot_offset=_inst.size*Vector2(0.5,0.5)
 		_inst.modulate.a=0.0
@@ -45,8 +45,8 @@ func _init_segment(_segment_info_words:Array)->void:
 		_img.stretch_mode=5
 		_img.name=str(i)
 		_img.gui_input.connect(object_input.bind(_img))
-		_img.mouse_entered.connect(_hover_image.bind(_img))
-		_img.mouse_exited.connect(_hover_image_exit)
+		_img.mouse_entered.connect(Globals._hover_image.bind(_img))
+		_img.mouse_exited.connect(Globals._hover_image_exit)
 		
 		#images appearing anim
 		_img.pivot_offset=_img.size*Vector2(0.5,0.5)
@@ -64,29 +64,28 @@ func appear_anim()->void:
 				.set_delay(1)
 
 
-var current_selected=null
 func object_input(event:InputEvent,object)->void:
 	if event.is_pressed():
 		var _obj_class:String=object.get_class()
 		var _tween:Tween=create_tween().set_parallel(true)
 		Globals.emit_signal("SFX","B")
 		
-		if current_selected==null: #then select
-			current_selected=object
+		if Globals.current_selected==null: #then select
+			Globals.current_selected=object
 			_select_current_object_anim(_tween)
 		else:
-			if current_selected==object: #same - deselect
+			if Globals.current_selected==object: #same - deselect
 				_deselect_current_object_anim(_tween)
-				current_selected=null
-			elif current_selected.get_class()==_obj_class: #same type - reselect
+				Globals.current_selected=null
+			elif Globals.current_selected.get_class()==_obj_class: #same type - reselect
 				#deselect current
 				_deselect_current_object_anim(_tween)
 				#select new
-				current_selected=object
+				Globals.current_selected=object
 				_select_current_object_anim(_tween)
-			elif current_selected.name==object.name:
+			elif Globals.current_selected.name==object.name:
 				## right anwer - disable all(Mouse-ignore) and send a message
-				for i in [object,current_selected]: #wrong anim
+				for i in [object,Globals.current_selected]: #wrong anim
 					i.mouse_filter=2
 					_tween.tween_property(i,"scale",Vector2(1.0,1.0),0.6).from(Vector2(1.2,1.2))\
 						.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
@@ -96,28 +95,28 @@ func object_input(event:InputEvent,object)->void:
 				
 				Globals.emit_signal("ShowMessage","_right")
 				
-				current_selected=null
+				Globals.current_selected=null
 				LavelCounter-=1
 				if LavelCounter==0:
 					finish_level()
 			else:
 				_deselect_current_object_anim(_tween)
-				for i in [object,current_selected]: #wrong anim
+				for i in [object,Globals.current_selected]: #wrong anim
 					_tween.tween_property(i,"rotation_degrees",0,0.4).from(-15)\
 						.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 					pass
-				current_selected=null
+				Globals.current_selected=null
 				
 				Globals.emit_signal("ShowMessage","_wrong")
 
 
 func _select_current_object_anim(_tween:Tween)->void:
-	current_selected.modulate=Color(1.2,1.2,1.2)
-	_tween.tween_property(current_selected,"scale",Vector2(1.2,1.2),0.8)\
+	Globals.current_selected.modulate=Color(1.2,1.2,1.2)
+	_tween.tween_property(Globals.current_selected,"scale",Vector2(1.2,1.2),0.8)\
 		.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT).from(Vector2(0.96,0.96))
 func _deselect_current_object_anim(_tween:Tween)->void:
-	current_selected.modulate=Color(1,1,1)
-	_tween.tween_property(current_selected,"scale",Vector2(1.0,1.0),0.8)\
+	Globals.current_selected.modulate=Color(1,1,1)
+	_tween.tween_property(Globals.current_selected,"scale",Vector2(1.0,1.0),0.8)\
 		.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 
 
@@ -151,30 +150,3 @@ func _physics_process(delta: float) -> void:#Flow placing
 	WordsGrp.size.y=0.0
 	var _aimed_pos:float=WordsGrp.position.y+WordsGrp.size.y*WordsGrp.scale.y+25
 	ImagesGrp.position.y=lerp(ImagesGrp.position.y,_aimed_pos,delta*3)
-
-
-var current_hover:TextureRect
-func _hover_image(_img_node:TextureRect)->void:
-	if current_hover!=null:
-		_hover_image_exit()
-	current_hover=_img_node
-	
-	if current_hover!=current_selected:
-		_img_node.modulate=Color(1.1,1.1,1.1)
-		var _tween:Tween=create_tween()
-		_tween.tween_property(_img_node,"scale",Vector2(1.0,1.0),0.8)\
-			.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT).from(Vector2(0.93,0.93))
-
-
-func _hover_image_exit()->void:
-	if current_hover!=null:
-		if current_hover!=current_selected:
-			current_hover.modulate=Color(1,1,1)
-		current_hover=null
-
-
-func _hover_button(_button_node:Button)->void:
-	if _button_node!=current_selected:
-		var _tween:Tween=create_tween()
-		_tween.tween_property(_button_node,"scale",Vector2(1.0,1.0),0.8)\
-			.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT).from(Vector2(0.95,0.95))
