@@ -85,7 +85,7 @@ func object_input(event:InputEvent,object)->void:
 				_select_current_object_anim(_tween)
 			elif Globals.current_selected.name==object.name:
 				## right anwer - disable all(Mouse-ignore) and send a message
-				for i in [object,Globals.current_selected]: #wrong anim
+				for i in [object,Globals.current_selected]: #right anim
 					i.mouse_filter=2
 					_tween.tween_property(i,"scale",Vector2(1.0,1.0),0.6).from(Vector2(1.2,1.2))\
 						.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
