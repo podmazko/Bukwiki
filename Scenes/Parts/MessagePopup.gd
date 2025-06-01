@@ -11,7 +11,18 @@ func _ready() -> void:
 
 ###### Inner Funtions
 var _popup_scale:=Vector2(0.9,0.9)
-func message(_text:String,img:String,from_scale:=Vector2(1.03,0.98))->void:
+func message(_text:String,img:String="",from_scale:=Vector2(1.03,0.98))->void:
+	if _text.left(1)=="_": #text code
+		match _text:
+			"_wrong":
+				var _info:Array=wrong_answer()
+				_text=_info[0]
+				img=_info[1]
+			"_right":
+				var _info:Array=right_answer()
+				_text=_info[0]
+				img=_info[1]
+	
 	PopupNode.scale=from_scale*_popup_scale
 	$HBox/Bubble.text=_text+"\n"
 	$HBox/Character.texture=load("res://Assets/Images/Popup/"+img+".png")
@@ -21,6 +32,23 @@ func message(_text:String,img:String,from_scale:=Vector2(1.03,0.98))->void:
 	_tween.tween_property(PopupNode,"scale",_popup_scale,0.6)\
 		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	_tween.tween_property(PopupNode,"modulate:a",1.0,0.2)
+
+var V_message_n:int=0
+var X_message_n:int=0
+func wrong_answer():
+	var _t:String=["Ой! Что-то не то...","Ух, не подошло"][X_message_n]
+	X_message_n+=1
+	if X_message_n==2:
+		X_message_n=0
+	return [_t,"Fear"] #[text,image name]
+
+func right_answer():
+	var _t:String=["Ого, ты молодец!","Правильно!","Умничка!","Верно!","Супер!"][V_message_n]
+	V_message_n+=1
+	if V_message_n==5:
+		V_message_n=0
+	return [_t,"Happy"] #[text,image name]
+
 
 func hide_message()->void:
 	var _tween:Tween=create_tween().set_parallel(true)

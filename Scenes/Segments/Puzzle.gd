@@ -102,12 +102,9 @@ func appear_anim()->void:
 		_tween.tween_callback(Globals.emit_signal.bind("SFX","A")).set_delay(_delay)
 
 	
-	_tween.tween_callback(message.bind("Как же собрать слоги\nобратно в слова?","Fear",Vector2(0.5,0)) )\
+	_tween.tween_callback(Globals.emit_signal.bind("ShowMessage","Как же собрать слоги\nобратно в слова?","Fear",Vector2(0.5,0)) )\
 				.set_delay(1)
 
-
-func message(_text:String,img:String,from_scale:=Vector2(1.05,0.95))->void:
-	Globals.emit_signal("ShowMessage",_text,img,from_scale)
 
 func disappear_anim()->void:
 	queue_free()

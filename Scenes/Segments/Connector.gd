@@ -60,17 +60,9 @@ func _init_segment(_segment_info_words:Array)->void:
 	
 func appear_anim()->void:
 	var _tween:Tween=create_tween().set_parallel(true)
-	_tween.tween_callback(message.bind("Как много слов!\nЧто же они все означают?","Fear",Vector2(0.5,0)) )\
+	_tween.tween_callback(Globals.emit_signal.bind("ShowMessage","Как много слов!\nЧто же они все означают?","Fear",Vector2(0.5,0)) )\
 				.set_delay(1)
 
-
-###### Inner Funtions
-func message(_text:String,img:String,from_scale:=Vector2(1.05,0.95))->void:
-	Globals.emit_signal("ShowMessage",_text,img,from_scale)
-
-
-var V_message_n:int=0
-var X_message_n:int=0
 
 var current_selected=null
 func object_input(event:InputEvent,object)->void:
@@ -102,10 +94,7 @@ func object_input(event:InputEvent,object)->void:
 				
 				Globals.emit_signal("SFX","A")
 				
-				message(["Ого, ты молодец!","Правильно!","Умничка!","Верно!","Супер!"][V_message_n],"Happy")
-				V_message_n+=1
-				if V_message_n==5:
-					V_message_n=0
+				Globals.emit_signal("ShowMessage","_right")
 				
 				current_selected=null
 				LavelCounter-=1
@@ -118,12 +107,10 @@ func object_input(event:InputEvent,object)->void:
 						.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 					pass
 				current_selected=null
+				
+				Globals.emit_signal("ShowMessage","_wrong")
 
-				message(["Ой! Что-то не то...","Ух, не подошло"][X_message_n],"Fear")
-				X_message_n+=1
-				if X_message_n==2:
-					X_message_n=0
-	
+
 func _select_current_object_anim(_tween:Tween)->void:
 	current_selected.modulate=Color(1.2,1.2,1.2)
 	_tween.tween_property(current_selected,"scale",Vector2(1.2,1.2),0.8)\
