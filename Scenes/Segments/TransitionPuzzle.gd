@@ -87,6 +87,9 @@ func appear_anim()->void:
 
 
 func object_input(event:InputEvent,object)->void:
+	if LavelCounter<1:
+		return
+	
 	if event.is_pressed():
 		var _tween:Tween=create_tween().set_parallel(true)
 		Globals.emit_signal("SFX","B")
@@ -117,6 +120,7 @@ func finish_level()->void:
 
 	#main scene will call disappear anim after that
 	
+
 func disappear_anim()->void:
 	var _tween:Tween=create_tween().set_parallel(true)
 	_tween.tween_property(self,"scale",Vector2(0.0,0.0),0.3).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
