@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c2hhkdkmjbyyj"]
 
-[ext_resource type="Script" path="res://Scenes/Segments/Monolog.gd" id="1_jwfls"]
+[ext_resource type="Script" uid="uid://bqmnq4px4ajym" path="res://Scenes/Segments/Monolog.gd" id="1_jwfls"]
 
 [node name="Monolog" type="Control"]
 layout_mode = 3

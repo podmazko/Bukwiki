@@ -1,6 +1,7 @@
 extends Control
 
-@onready var PopupNode:HBoxContainer=$HBox
+@onready var PopupNode:TextureRect=$Character
+@onready var TextNode:Label=$Character/Bubble
 
 
 func _ready() -> void:
@@ -8,6 +9,7 @@ func _ready() -> void:
 	PopupNode.pivot_offset=PopupNode.size
 	Globals.ShowMessage.connect(message)
 	Globals.HideMessage.connect(hide_message)
+	get_viewport().size_changed.connect(_replace_on_screen)
 
 ###### Inner Funtions
 var _popup_scale:=Vector2(0.9,0.9)
@@ -24,14 +26,23 @@ func message(_text:String,img:String="",from_scale:=Vector2(1.03,0.98))->void:
 				img=_info[1]
 	
 	PopupNode.scale=from_scale*_popup_scale
-	$HBox/Bubble.text=_text+"\n"
-	$HBox/Character.texture=load("res://Assets/Images/Popup/"+img+".png")
+	TextNode.text=_text
+	PopupNode.texture=load("res://Assets/Images/Popup/"+img+".png")
+	PopupNode.size=Vector2(0,0)
+	TextNode.size.x=0
+	_replace_on_screen()
 	
 	PopupNode.pivot_offset=PopupNode.size
 	var _tween:Tween=create_tween().set_parallel(true)
 	_tween.tween_property(PopupNode,"scale",_popup_scale,0.6)\
 		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	_tween.tween_property(PopupNode,"modulate:a",1.0,0.2)
+
+func _replace_on_screen()->void:
+	PopupNode.position=get_viewport_rect().size-PopupNode.size
+	
+	TextNode.position.x=120-TextNode.size.x
+	
 
 var V_message_n:int=0
 var X_message_n:int=0

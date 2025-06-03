@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dcr3wxxr3cnjh"]
 
 [ext_resource type="Texture2D" uid="uid://bsg378j7rseex" path="res://Assets/Images/Star.png" id="1_2t1ne"]
-[ext_resource type="Script" path="res://Scenes/Parts/LevelButton.gd" id="1_kts13"]
+[ext_resource type="Script" uid="uid://dqcd7vg68eo4j" path="res://Scenes/Parts/LevelButton.gd" id="1_kts13"]
 
 [node name="LevelButton" type="Button"]
 custom_minimum_size = Vector2(170, 170)
