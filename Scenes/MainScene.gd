@@ -147,13 +147,20 @@ func next_segment()->void:
 	
 	#show next segment
 	if level_flow_data.is_empty():
+		_on_exit_pressed() # just for now
 		on_level_finished()
 		return
 	
 	var _current_segment:Array=level_flow_data[0].duplicate()
 	level_flow_data.remove_at(0)
 	
-	var _inst:Control=Data.SegmentsInfo[_current_segment[0]]["preload"].instantiate()
+	var _inst:Control
+	var _preload_info=Data.SegmentsInfo[_current_segment[0]]["preload"]
+	if _preload_info is String:
+		_inst=load(_preload_info).instantiate()
+	else:
+		_inst=_preload_info.instantiate()
+	#var _inst:Control=Data.SegmentsInfo[_current_segment[0]]["preload"].instantiate()
 	var _current_segment_info=Data.SegmentsInfo [_current_segment[0]] [_current_segment[1]]
 	$BgColor/SegmentGrp.add_child(_inst)
 	_inst._init_segment(_current_segment_info)

@@ -1,9 +1,9 @@
 extends Node
 
 
-
+##
 var LevelsInfo:={ #["Puzzle",0],
-	1:["Первая встреча",[["Monolog",11],["Monolog",12],["Connector",0],["Monolog",13],["Monolog",14],["Monolog",15],["Puzzle",0] ]],
+	1:["Первая встреча",[["Monolog",11],["Monolog",12],["Connector",0],["Monolog",14],["Monolog",15],["Puzzle",0],["Monolog",16],["TransitionPuzzle",0],["Monolog",13],["Monolog",17] ]],
 	2:[],
 	3:[],
 	4:[],
@@ -32,12 +32,14 @@ var SegmentsInfo:={
 		"preload":preload("res://Scenes/Segments/Monolog.tscn"),
 		11:["Hi","Привет! Я Буквик\nЯ прилетел изучать вашу замечательную планету","Привет!"],
 		12:["Happy","Для начала мне нужно научиться читать!\nПоможешь мне?","Конечно!"],
-		13:["Happy","Как хорошо, что я тебя встретил!\nТы такой умный!","Cпасибо"],
-		14:["Read","Все слова я собираю в эту книжку. Хочешь посмотреть?","Конечно!"],
-		15:["BookDrop","Ой, уронил! Теперь надо все собрать","(помочь Буквику)"],
+		13:["Happy","Это был я на своей родной планете!\nУзнал меня?","Конечно!"],
+		14:["Read","Все слова я собираю в эту книжку\nДать посмотреть?","Давай"],
+		15:["BookDrop","Ой, уронил!\nТеперь надо все собрать","(помочь Буквику)"],
+		16:["Waving","А теперь давай соберем пазл, чтобы передохнуть\nГотов?","Готов!"],
+		17:["Hi","Спасибо за помощь!\n Увидемся на следующем занятии","Выход"],
 	},
 	"Connector":{ #Images name + Text
-		"preload":preload("res://Scenes/Segments/Connector.tscn"),
+		"preload":"res://Scenes/Segments/Connector.tscn",
 		0:["ВРАЧ","РЫСЬ","ФЛАГ","ДОМ","ЧАЙ","ЛУК","ГРИБ","ТОРТ","ДВЕРЬ","МЫШЬ"],
 		1:["СТУЛ","НОС","МЯЧ","КОТ","ЛОСЬ","СОМ","СУП","КРАН","ФЕН","СОК"],
 		2:["РЫБА","ШАР","ВОЛК","КАША","ЛИСТ","БЫК","ЦВЕТОК","КРОТ","СТОЛ","СЫР"],
@@ -52,8 +54,14 @@ var SegmentsInfo:={
 		11:["РАКЕТА","ГОЛОВА","МАШИНА","ЖЕЛЕ","ЕНОТ","КОНФЕТА","ЗЕФИР","ПЕНАЛ","РАДУГА","ВИШНЯ"],
 	},
 	"Puzzle":{ #Images name + Text
-		"preload":preload("res://Scenes/Segments/Puzzle.tscn"),
+		"preload":"res://Scenes/Segments/Puzzle.tscn",
 		0:["СУНДУК","ПИРАТ","ТУЧА","ВОЛНА","ЗАМОК","КНИГА"],
+	},
+	
+	"TransitionPuzzle":{ #Images name + Text
+		"preload":"res://Scenes/Segments/TransitionPuzzle.tscn",
+		0:["res://Assets/Images/Illustrations/Motherhood.jpg",Vector2(2,4)],
+		1:["res://Assets/Images/Illustrations/Cosmo.jpg",Vector2(2,7)],
 	},
 	
 }
