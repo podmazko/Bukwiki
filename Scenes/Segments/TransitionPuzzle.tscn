@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dtwmbl1x2kaed"]
 
-[ext_resource type="Script" path="res://Scenes/Segments/TransitionPuzzle.gd" id="1_tuufq"]
-[ext_resource type="Shader" path="res://Assets/Shaders/TransitionPuzzlePlaceholder.gdshader" id="2_orni8"]
+[ext_resource type="Script" uid="uid://cpftjkagsdlf4" path="res://Scenes/Segments/TransitionPuzzle.gd" id="1_tuufq"]
+[ext_resource type="Shader" uid="uid://dtjgewfinwk6m" path="res://Assets/Shaders/TransitionPuzzlePlaceholder.gdshader" id="2_orni8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_srjpx"]
 shader = ExtResource("2_orni8")
