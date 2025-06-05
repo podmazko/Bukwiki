@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db8lt2wmj1408"
-path="res://.godot/imported/R4.png-b24e5169259e745f02902bbf7610d55a.ctex"
+uid="uid://chhkgngqwx8iy"
+path="res://.godot/imported/RozetkaA1.png-23233b514e6259285c853ad1cbbc528a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Puzzle/R4.png"
-dest_files=["res://.godot/imported/R4.png-b24e5169259e745f02902bbf7610d55a.ctex"]
+source_file="res://Assets/Images/Segments/Repairing/RozetkaA1.png"
+dest_files=["res://.godot/imported/RozetkaA1.png-23233b514e6259285c853ad1cbbc528a.ctex"]
 
 [params]
 

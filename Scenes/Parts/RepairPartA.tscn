@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bybd3i11lyskl"]
+
+[ext_resource type="Script" path="res://Scenes/Parts/RepairPartA.gd" id="1_yu6ks"]
+[ext_resource type="Texture2D" uid="uid://c6htbyvepd337" path="res://Assets/Images/Segments/Repairing/RozetkaB.png" id="2_gknit"]
+
+[node name="RepairPartA" type="Label"]
+custom_minimum_size = Vector2(0, 70)
+offset_right = 91.0
+offset_bottom = 70.0
+mouse_filter = 0
+text = "        О"
+vertical_alignment = 1
+script = ExtResource("1_yu6ks")
+
+[node name="RozetkaB" type="Sprite2D" parent="."]
+position = Vector2(36, 38)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_gknit")

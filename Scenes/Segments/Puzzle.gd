@@ -47,7 +47,7 @@ func _init_segment(_segment_info_words:Array)->void:
 		_pzL.mouse_exited.connect(Globals._hover_image_exit)
 		L_parts.append(_pzL)
 		_pzL.PuzzleSize="L"
-		_pzL._init_PuzzlePart(true,parts[0],"res://Assets/Images/Puzzle/L"+str(puzzle_img_n)+".png")
+		_pzL._init_PuzzlePart(true,parts[0],"res://Assets/Images/Segments/Puzzle/L"+str(puzzle_img_n)+".png")
 		_pzL.name=str(puzzle_img_n)
 		
 		var _pzR:NinePatchRect=PuzzleNode.instantiate()
@@ -57,9 +57,8 @@ func _init_segment(_segment_info_words:Array)->void:
 		_pzR.mouse_exited.connect(Globals._hover_image_exit)
 		R_parts.append(_pzR)
 		_pzL.PuzzleSize="R"
-		_pzR._init_PuzzlePart(false,parts[1],"res://Assets/Images/Puzzle/R"+str(puzzle_img_n)+".png")
+		_pzR._init_PuzzlePart(false,parts[1],"res://Assets/Images/Segments/Puzzle/R"+str(puzzle_img_n)+".png")
 		_pzR.name=str(puzzle_img_n)
-		
 		puzzle_img_n+=1#set next images
 		
 	L_parts.shuffle()

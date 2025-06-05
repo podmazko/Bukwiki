@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfbi2ikbl4w8b"]
 
 [ext_resource type="Texture2D" uid="uid://cwn36hwuxni18" path="res://Assets/Images/Popup/Fear.png" id="1_4ts40"]
-[ext_resource type="Script" uid="uid://iua3sydj63b0" path="res://Scenes/Parts/MessagePopup.gd" id="1_sj20o"]
+[ext_resource type="Script" path="res://Scenes/Parts/MessagePopup.gd" id="1_sj20o"]
 
 [node name="MessagePopup" type="Control"]
 layout_mode = 3

@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dvsb6etqunbde"]
+
+[ext_resource type="Shader" path="res://Assets/Shaders/Light.gdshader" id="1_t061y"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_t061y")
+shader_parameter/offset = 0.0

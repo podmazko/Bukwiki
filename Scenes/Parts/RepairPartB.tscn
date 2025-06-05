@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq8o1weftiubr"]
+
+[ext_resource type="Texture2D" uid="uid://chhkgngqwx8iy" path="res://Assets/Images/Segments/Repairing/RozetkaA1.png" id="1_6gfv0"]
+[ext_resource type="Script" path="res://Scenes/Parts/RepairPartB.gd" id="1_vtraq"]
+[ext_resource type="Texture2D" uid="uid://0ctkfyb8x2vi" path="res://Assets/Images/Segments/Repairing/RozetkaA2.png" id="3_q6qat"]
+
+[node name="RepairPartB" type="TextureRect"]
+self_modulate = Color(0.650128, 0.650128, 0.650128, 1)
+offset_right = 124.0
+offset_bottom = 228.0
+texture = ExtResource("1_6gfv0")
+script = ExtResource("1_vtraq")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 2.0
+offset_top = -44.0
+offset_right = 2.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+text = "К"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RozetkaA2" type="Sprite2D" parent="."]
+self_modulate = Color(0.650128, 0.650128, 0.650128, 1)
+show_behind_parent = true
+position = Vector2(58, 390)
+texture = ExtResource("3_q6qat")

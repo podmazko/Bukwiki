@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://jqsydjtlj2aq"]
 
-[ext_resource type="Script" uid="uid://bwvll7m3gdww3" path="res://Scenes/Segments/Connector.gd" id="1_r5jys"]
+[ext_resource type="Script" path="res://Scenes/Segments/Connector.gd" id="1_r5jys"]
 
 [node name="Connector" type="Control"]
 layout_mode = 3

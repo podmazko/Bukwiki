@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bajuoyiw7ovj7"]
 
-[ext_resource type="Script" uid="uid://ffsdw4kmpdhc" path="res://Scenes/Parts/PuzzlePart.gd" id="1_i73i7"]
-[ext_resource type="Texture2D" uid="uid://xq6ehtlb7d0r" path="res://Assets/Images/Puzzle/R1.png" id="2_onqlt"]
+[ext_resource type="Script" path="res://Scenes/Parts/PuzzlePart.gd" id="1_i73i7"]
+[ext_resource type="Texture2D" uid="uid://xq6ehtlb7d0r" path="res://Assets/Images/Segments/Puzzle/R1.png" id="2_onqlt"]
 
 [node name="PuzzlePart" type="NinePatchRect"]
 custom_minimum_size = Vector2(300, 150)

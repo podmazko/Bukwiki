@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw36cgakmguye"
-path="res://.godot/imported/R3.png-45bafe3a38a63a3ffc898e6fbaa6cb56.ctex"
+uid="uid://i3fxump6pon7"
+path="res://.godot/imported/L4.png-16c9fb6ba3004b8d198cd2e63bed1625.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Puzzle/R3.png"
-dest_files=["res://.godot/imported/R3.png-45bafe3a38a63a3ffc898e6fbaa6cb56.ctex"]
+source_file="res://Assets/Images/Segments/Puzzle/L4.png"
+dest_files=["res://.godot/imported/L4.png-16c9fb6ba3004b8d198cd2e63bed1625.ctex"]
 
 [params]
 
