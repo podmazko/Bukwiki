@@ -3,7 +3,7 @@ extends Node
 
 ##
 var LevelsInfo:={ #["Puzzle",0],
-	1:["Первая встреча",[ ["Monolog",11],["Monolog",12],["Connector",0],["Monolog",14],["Monolog",15],["Puzzle",0],["Monolog",16],["TransitionPuzzle",0],["Monolog",13],["Monolog",18],["Repairing",0], ["Monolog",17] ]],
+	1:["Первая встреча",[["Monolog",11],["Monolog",12],["Connector",0],["Monolog",14],["Monolog",15],["Puzzle",0],["Monolog",16],["TransitionPuzzle",0],["Monolog",13],["Monolog",18],["Repairing",0], ["Monolog",17] ]],
 	2:[],
 	3:[],
 	4:[],

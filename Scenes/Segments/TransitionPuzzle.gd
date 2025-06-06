@@ -87,10 +87,8 @@ func appear_anim()->void:
 
 
 func object_input(event:InputEvent,object)->void:
-	if LavelCounter<1:
-		return
-	
 	if event.is_pressed():
+		object.mouse_filter=2
 		var _tween:Tween=create_tween().set_parallel(true)
 		Globals.emit_signal("SFX","B")
 		
