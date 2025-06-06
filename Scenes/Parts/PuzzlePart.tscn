@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://xq6ehtlb7d0r" path="res://Assets/Images/Segments/Puzzle/R1.png" id="2_onqlt"]
 
 [node name="PuzzlePart" type="NinePatchRect"]
+self_modulate = Color(1, 1, 1, 0.776471)
 custom_minimum_size = Vector2(300, 150)
 offset_left = -33.5
 offset_top = -10.0

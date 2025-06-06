@@ -46,7 +46,8 @@ func _playSFX_A()->void:
 	SFXplayback.play_stream(preload("res://Assets/SFX/impactMining_000.ogg"), 0, -5, randf_range(0.9, 1.1))
 func _playSFX_B()->void:
 	SFXplayback.play_stream(preload("res://Assets/SFX/impactTin_medium_003.ogg"), 0, -10, randf_range(0.9, 1.1))
-	
+func _playSFX_C()->void:
+	SFXplayback.play_stream(preload("res://Assets/SFX/SFX-Sparks.ogg"), 0, -10, randf_range(0.9, 1.1))
 	
 func _setup_levels_buttons()->void:
 	for i in Data.LevelsInfo:

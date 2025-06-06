@@ -3,13 +3,13 @@ extends Control
 @onready var WordsGrp:HFlowContainer=$HFlow
 @onready var ImagesGrp:HFlowContainer=$HFlow2
 
-var LavelCounter:int
+var LevelCounter:int
 
 func _init_segment(_segment_info_words:Array)->void:
 	#prepare arrays
 	var _segment_info:Array=[_segment_info_words,[]]
 	var words_count:int=_segment_info[0].size()
-	LavelCounter=words_count
+	LevelCounter=words_count
 	#set images pathes
 	for i in words_count:
 		_segment_info[1].append( Data.Words[_segment_info_words[i]][0])
@@ -96,8 +96,8 @@ func object_input(event:InputEvent,object)->void:
 				Globals.emit_signal("ShowMessage","_right")
 				
 				Globals.current_selected=null
-				LavelCounter-=1
-				if LavelCounter==0:
+				LevelCounter-=1
+				if LevelCounter==0:
 					finish_level()
 			else:
 				_deselect_current_object_anim(_tween)

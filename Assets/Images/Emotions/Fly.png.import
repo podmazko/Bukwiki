@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct5vua2frgmvm"
-path="res://.godot/imported/Waving.png-b3f57f10851dddec9a9ce87646975778.ctex"
+uid="uid://yfm6y8lu8hrk"
+path="res://.godot/imported/Fly.png-310a07d0e5afe109f2e08a38d86c21a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Emotions/Waving.png"
-dest_files=["res://.godot/imported/Waving.png-b3f57f10851dddec9a9ce87646975778.ctex"]
+source_file="res://Assets/Images/Emotions/Fly.png"
+dest_files=["res://.godot/imported/Fly.png-310a07d0e5afe109f2e08a38d86c21a1.ctex"]
 
 [params]
 
