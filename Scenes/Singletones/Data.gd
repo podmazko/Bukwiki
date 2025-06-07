@@ -1,9 +1,9 @@
 extends Node
 
 
-##
-var LevelsInfo:={ #["Puzzle",0],
-	1:["Первая встреча",[ ["MemoryCards",0] ,["Monolog",11],["Monolog",12],["Connector",0],["Monolog",14],["Monolog",15],["Puzzle",0],["Monolog",16],["TransitionPuzzle",0],["Monolog",13],["Monolog",18],["Repairing",0], ["Monolog",17] ]],
+
+var LevelsInfo:={ #
+	1:["Первая встреча",[ ["MemoryCards",0],["MemoryCards",1], ["Monolog",11],["Monolog",12],["Connector",0],["Monolog",14],["Monolog",15],["Puzzle",0],["Monolog",10],["Monolog",16],["TransitionPuzzle",0],["Monolog",13],["Monolog",18],["Repairing",0], ["Monolog",17] ]],
 	2:[],
 	3:[],
 	4:[],
@@ -30,14 +30,14 @@ var LevelsInfo:={ #["Puzzle",0],
 var SegmentsInfo:={
 	"Monolog":{ #Images name + Text + Answer Test
 		"preload":preload("res://Scenes/Segments/Monolog.tscn"),
-		11:["Hi","Привет! Я Буквик\nЯ прилетел изучать вашу замечательную планету","Привет!"],
+		11:["Hi","Привет! Я Буквик\nПрилетел изучать вашу замечательную планету","Привет!"],
 		12:["Happy","Для начала мне нужно научиться читать!\nПоможешь мне?","Конечно!"],
 		13:["Happy","Это был я на своей родной планете!\nУзнал меня?","Конечно!"],
 		14:["Read","Все слова я собираю в эту книжку\nДать посмотреть?","Давай"],
 		15:["BookDrop","Ой, уронил!\nТеперь надо все собрать","(помочь Буквику)"],
-		16:["Hi","А теперь давай соберем пазл, чтобы передохнуть\nГотов?","Готов!"],
-		18:["Fly","А сейчас мы туда полетииим\nПодключай провода!","Вперёд!"],
-		
+		16:["Hi","А теперь давай передохнём\nГотов собрать пазл?","Готов!"],
+		18:["Fly","И сейчас мы туда полетииим\nПодключай провода!","Вперёд!"],
+		10:["Happy","У тебя отлично получается!\nКак хорошо, что я тебя встретил","Спасибо!"],
 		
 		17:["Happy","Спасибо за помощь!\n Увидимся на следующем занятии","Выход"],
 	},
@@ -62,7 +62,7 @@ var SegmentsInfo:={
 	},
 	"Repairing":{ #Images name + Text
 		"preload":"res://Scenes/Segments/Repairing.tscn",
-		0:["РАКЕТА","ГОЛОВА","МАШИНА","КОНФЕТА","ЗЕФИР"],
+		0:["РАКЕТА","ГОЛОВА","МАШИНА","КОНФЕТА","ЗАБОР"],
 	},
 	
 	
@@ -73,7 +73,8 @@ var SegmentsInfo:={
 	},
 	"MemoryCards":{ #Images name + Text
 		"preload":"res://Scenes/Segments/MemoryCards.tscn",
-		0:[4,0.0], #grid size and difficilty
+		0:[2,0.0], #grid size and difficilty
+		1:[3,0.05], #grid size and difficilty
 	},
 	
 }

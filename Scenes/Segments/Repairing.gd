@@ -42,7 +42,7 @@ func _init_segment(_segment_info_words:Array)->void:
 
 func appear_anim()->void:
 	var _tween:Tween=create_tween().set_parallel(true)
-	_tween.tween_callback(Globals.emit_signal.bind("ShowMessage","Ой, только провода перепутались\nСможешь подключить?","Fear",Vector2(0.5,0)) )\
+	_tween.tween_callback(Globals.emit_signal.bind("ShowMessage","Ой, только провода перепутались\nСможешь разобраться?","Fear",Vector2(0.5,0)) )\
 				.set_delay(1)
 
 	var _delay:=0.0

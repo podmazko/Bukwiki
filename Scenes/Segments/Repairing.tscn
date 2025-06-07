@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bybrydiuuci6f"]
 
-[ext_resource type="Script" path="res://Scenes/Segments/Repairing.gd" id="1_h08ad"]
+[ext_resource type="Script" uid="uid://c5slk233hhrfv" path="res://Scenes/Segments/Repairing.gd" id="1_h08ad"]
 [ext_resource type="Texture2D" uid="uid://dkufkybsvj4qc" path="res://Assets/Images/Segments/Repairing/UNO.png" id="2_lwb0a"]
 [ext_resource type="Material" uid="uid://dvsb6etqunbde" path="res://Assets/Shaders/Light.tres" id="3_ecldb"]
 

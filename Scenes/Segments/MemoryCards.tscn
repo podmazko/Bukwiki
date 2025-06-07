@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bmhnbp3x2aoyk"]
 
-[ext_resource type="Script" path="res://Scenes/Segments/MemoryCards.gd" id="1_6efqn"]
+[ext_resource type="Script" uid="uid://dw1ha54w4aq6d" path="res://Scenes/Segments/MemoryCards.gd" id="1_6efqn"]
 [ext_resource type="Texture2D" uid="uid://b8wkeo44rq4mt" path="res://Assets/Images/Emotions/Mage.png" id="2_m27l3"]
 [ext_resource type="Texture2D" uid="uid://ct8gdlr8n6lfo" path="res://Assets/Images/Segments/MemoryCards/MageLight.png" id="3_lgfnh"]
 [ext_resource type="Material" uid="uid://dvsb6etqunbde" path="res://Assets/Shaders/Light.tres" id="3_p34nf"]
-[ext_resource type="Shader" path="res://Assets/Shaders/Light.gdshader" id="5_kwj0b"]
+[ext_resource type="Shader" uid="uid://dg6vmer1pv8px" path="res://Assets/Shaders/Light.gdshader" id="5_kwj0b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1wgtd"]
 resource_local_to_scene = true

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bq8o1weftiubr"]
 
 [ext_resource type="Texture2D" uid="uid://chhkgngqwx8iy" path="res://Assets/Images/Segments/Repairing/RozetkaA1.png" id="1_6gfv0"]
-[ext_resource type="Script" path="res://Scenes/Parts/RepairPartB.gd" id="1_vtraq"]
+[ext_resource type="Script" uid="uid://cps7h4t5rudd8" path="res://Scenes/Parts/RepairPartB.gd" id="1_vtraq"]
 [ext_resource type="Texture2D" uid="uid://0ctkfyb8x2vi" path="res://Assets/Images/Segments/Repairing/RozetkaA2.png" id="3_q6qat"]
 
 [node name="RepairPartB" type="TextureRect"]
