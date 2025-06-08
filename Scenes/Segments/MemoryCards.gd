@@ -4,12 +4,15 @@ var _CardNode:PackedScene=preload("res://Scenes/Parts/MemoryCard.tscn")
 @onready var Center:Control=$Center
 @onready var Mage:Sprite2D=$Mage
 
+var message:=[]
+
 var LevelCounter:int
 func _init_segment(_segment_info_words:Array)->void: #[(2, 2), 0.3]
 	Mage.modulate.a=0
 	
 	var _grid:Vector2=_segment_info_words[0]
 	var _difficult:float=_segment_info_words[1]
+	message=_segment_info_words[2]
 	
 	var _all_words:Array=Data.Words.keys()
 	var _words_count:int=_grid.x*_grid.y/2
@@ -79,6 +82,11 @@ func _init_segment(_segment_info_words:Array)->void: #[(2, 2), 0.3]
 
 func appear_anim()->void:
 	var _tween:Tween=create_tween().set_parallel(true)
+	
+	if message.size()>0:
+		_tween.tween_callback(Globals.emit_signal.bind("ShowMessage",message[1],message[0],Vector2(0.5,0)) )\
+				.set_delay(1)
+
 
 	var _delay:=0.0
 	for _word in Center.get_children():

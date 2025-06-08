@@ -27,8 +27,12 @@ func message(_text:String,img:String="",from_scale:=Vector2(1.03,0.98))->void:
 	
 	PopupNode.scale=from_scale*_popup_scale
 	TextNode.text=_text
-	PopupNode.texture=load("res://Assets/Images/Popup/"+img+".png")
-	PopupNode.size=Vector2(0,0)
+	if img.is_empty():
+		PopupNode.texture=null
+		PopupNode.size=Vector2(150,550)
+	else:
+		PopupNode.texture=load("res://Assets/Images/Popup/"+img+".png")
+		PopupNode.size=Vector2(0,0)
 	TextNode.size.x=0
 	_replace_on_screen()
 	

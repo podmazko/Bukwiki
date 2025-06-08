@@ -3,7 +3,7 @@ extends Node
 
 
 var LevelsInfo:={ #
-	1:["Первая встреча",[ ["MemoryCards",0],["Monolog",19],["MemoryCards",1], ["Monolog",11],["Monolog",12],["Connector",0],["Monolog",14],["Monolog",15],["Puzzle",0],["Monolog",10],["Monolog",16],["TransitionPuzzle",0],["Monolog",13],["Monolog",18],["Repairing",0], ["Monolog",17] ]],
+	1:["Первая встреча",[ ["Monolog",11],["Monolog",12],["Connector",0],["Monolog",14],["Monolog",15],["Puzzle",0],["Monolog",10],["Monolog",16],["TransitionPuzzle",0],["Monolog",13],["Monolog",18],["Repairing",0],["MemoryCards",0],["Monolog",19],["MemoryCards",1], ["Monolog",17] ]],
 	2:[],
 	3:[],
 	4:[],
@@ -74,8 +74,8 @@ var SegmentsInfo:={
 	},
 	"MemoryCards":{ #Images name + Text
 		"preload":"res://Scenes/Segments/MemoryCards.tscn",
-		0:[Vector2(2,2),0.0], #grid size and difficilty
-		1:[Vector2(4,2),0.05], #grid size and difficilty
+		0:[Vector2(2,2),0.0,["", "А пока летим,\nдавай рассматривать звезды!"]], #grid size and difficilty
+		1:[Vector2(4,2),0.05,[]], #grid size and difficilty
 	},
 	
 }
