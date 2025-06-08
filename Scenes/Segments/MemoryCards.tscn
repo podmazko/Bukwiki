@@ -25,7 +25,7 @@ size_flags_vertical = 4
 script = ExtResource("1_6efqn")
 
 [node name="Mage" type="Sprite2D" parent="."]
-position = Vector2(608, -13)
+position = Vector2(619, -13)
 texture = ExtResource("2_m27l3")
 
 [node name="MageLight" type="Sprite2D" parent="Mage"]

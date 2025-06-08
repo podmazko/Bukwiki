@@ -8,7 +8,7 @@ var LevelCounter:int
 func _init_segment(_segment_info_words:Array)->void: #[(2, 2), 0.3]
 	Mage.modulate.a=0
 	
-	var _grid:Vector2=Vector2(_segment_info_words[0],_segment_info_words[0])
+	var _grid:Vector2=_segment_info_words[0]
 	var _difficult:float=_segment_info_words[1]
 	
 	var _all_words:Array=Data.Words.keys()

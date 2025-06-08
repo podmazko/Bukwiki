@@ -2,6 +2,7 @@ extends Control
 
 
 func _init_segment(_segment_info:Array)->void:
+	pivot_offset=size*Vector2(0.5,1.0)
 	$VBox/Images.texture=load("res://Assets/Images/Emotions/"+_segment_info[0]+".png")
 	$VBox/Label.text=_segment_info[1]
 	$VBox/Button.text=_segment_info[2]
