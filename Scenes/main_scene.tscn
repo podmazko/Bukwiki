@@ -1,11 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3bydmfmtb3wi"]
+[gd_scene load_steps=9 format=3 uid="uid://b3bydmfmtb3wi"]
 
 [ext_resource type="Script" uid="uid://cc7vms2e7xenj" path="res://Scenes/MainScene.gd" id="1_6l7je"]
 [ext_resource type="Texture2D" uid="uid://bjaw4kajw2oph" path="res://Assets/Images/Emotions/Read.png" id="2_foa4y"]
 [ext_resource type="PackedScene" uid="uid://cfbi2ikbl4w8b" path="res://Scenes/Parts/MessagePopup.tscn" id="3_j2i8u"]
 [ext_resource type="AudioStream" uid="uid://j7k38tsapjbo" path="res://Assets/Music/Positive-Orchestral-Theme-_4.ogg" id="3_jv6wh"]
-
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_x6ack"]
+[ext_resource type="AudioStream" uid="uid://cery7y3fjtav5" path="res://Assets/SFX/impactMining_000.ogg" id="5_iacmt"]
+[ext_resource type="AudioStream" uid="uid://dvn2h17tv2cxb" path="res://Assets/SFX/impactTin_medium_003.ogg" id="6_maf8m"]
+[ext_resource type="AudioStream" uid="uid://b6w05tr4k024j" path="res://Assets/SFX/SFX-Sparks.ogg" id="7_huasi"]
+[ext_resource type="AudioStream" uid="uid://dgbxkmtvt87jb" path="res://Assets/SFX/SFX-Liquid-09-Bubbles.ogg" id="8_huasi"]
 
 [node name="MainScene" type="Control"]
 layout_mode = 3
@@ -136,6 +138,21 @@ volume_db = -10.0
 pitch_scale = 1.1
 autoplay = true
 
-[node name="SFX" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamPolyphonic_x6ack")
-max_polyphony = 3
+[node name="SFXA" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_iacmt")
+volume_db = -5.0
+max_polyphony = 6
+
+[node name="SFXB" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_maf8m")
+volume_db = -10.0
+max_polyphony = 6
+
+[node name="SFXC" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_huasi")
+volume_db = -10.0
+max_polyphony = 6
+
+[node name="SFXD" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_huasi")
+max_polyphony = 6

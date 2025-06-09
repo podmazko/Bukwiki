@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [audio]
 
+driver/output_latency=50
 driver/output_latency.web=100
 
 [autoload]
@@ -29,6 +30,7 @@ Globals="*res://Scenes/Singletones/Globals.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/size/borderless=true
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"

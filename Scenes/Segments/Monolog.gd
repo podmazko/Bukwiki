@@ -10,7 +10,7 @@ func _init_segment(_segment_info:Array)->void:
 
 func appear_anim()->void:
 	Globals.emit_signal("SFX","A")
-	scale=Vector2(0.5,0.5)
+	scale=Vector2(0.5,0.7)
 	modulate.a=0.0
 	var _tween:Tween=create_tween().set_parallel(true)
 	_tween.tween_property(self,"scale",Vector2(1.0,1.0),0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)

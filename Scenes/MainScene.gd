@@ -35,22 +35,13 @@ func _ready():
 	_setup_levels_buttons()
 	
 	#set SFX
-	$SFX.play()
-	SFXplayback=$SFX.get_stream_playback()
 	Globals.SFX.connect(SFX)
 	
 	
 func SFX(_type:String)->void:
-	call("_playSFX_"+_type)
-func _playSFX_A()->void:
-	SFXplayback.play_stream(preload("res://Assets/SFX/impactMining_000.ogg"), 0, -5, randf_range(0.9, 1.1))
-func _playSFX_B()->void:
-	SFXplayback.play_stream(preload("res://Assets/SFX/impactTin_medium_003.ogg"), 0, -10, randf_range(0.9, 1.1))
-func _playSFX_C()->void:
-	SFXplayback.play_stream(preload("res://Assets/SFX/SFX-Sparks.ogg"), 0, -10, randf_range(0.9, 1.1))
-func _playSFX_D()->void:
-	SFXplayback.play_stream(preload("res://Assets/SFX/SFX-Liquid-09-Bubbles.ogg"), 0, 0, randf_range(0.9, 1.1))
-
+	var _player:AudioStreamPlayer=get_node("SFX"+_type)
+	_player.pitch_scale=randf_range(0.9, 1.1)
+	_player.play()
 	
 	
 func _setup_levels_buttons()->void:
