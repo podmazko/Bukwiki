@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cfbi2ikbl4w8b" path="res://Scenes/Parts/MessagePopup.tscn" id="3_j2i8u"]
 [ext_resource type="AudioStream" uid="uid://j7k38tsapjbo" path="res://Assets/Music/Positive-Orchestral-Theme-_4.ogg" id="3_jv6wh"]
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_jv6wh"]
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_x6ack"]
 
 [node name="MainScene" type="Control"]
 layout_mode = 3
@@ -137,4 +137,5 @@ pitch_scale = 1.1
 autoplay = true
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamPolyphonic_jv6wh")
+stream = SubResource("AudioStreamPolyphonic_x6ack")
+max_polyphony = 3

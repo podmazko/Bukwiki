@@ -29,7 +29,7 @@ Globals="*res://Scenes/Singletones/Globals.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
+window/size/borderless=true
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
@@ -45,3 +45,4 @@ common/physics_ticks_per_second=30
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
