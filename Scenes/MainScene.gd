@@ -209,3 +209,8 @@ func _on_play_online_pressed():
 func _on_exit_pressed():
 	print("Выход из игры...")
 	get_tree().quit()
+
+
+func _on_skip_button_pressed() -> void:
+	Globals.emit_signal("NextSegment")
+	Globals.emit_signal("HideMessage")

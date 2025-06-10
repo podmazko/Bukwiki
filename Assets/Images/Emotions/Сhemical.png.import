@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0ida2qef4gym"
-path="res://.godot/imported/Cosmo.jpg-63f0110ddcdf8ee94db1417d77692857.ctex"
+uid="uid://bmb5ipksmraiv"
+path="res://.godot/imported/Сhemical.png-54302d5663e1d4a0203aa7f5ac496542.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Illustrations/Cosmo.jpg"
-dest_files=["res://.godot/imported/Cosmo.jpg-63f0110ddcdf8ee94db1417d77692857.ctex"]
+source_file="res://Assets/Images/Emotions/Сhemical.png"
+dest_files=["res://.godot/imported/Сhemical.png-54302d5663e1d4a0203aa7f5ac496542.ctex"]
 
 [params]
 

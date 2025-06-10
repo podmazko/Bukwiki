@@ -156,3 +156,13 @@ max_polyphony = 6
 [node name="SFXD" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_huasi")
 max_polyphony = 6
+
+[node name="SkipButton" type="Button" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.529412)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 60.0
+text = "Skip"
+
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]

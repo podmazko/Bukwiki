@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0ida2qef4gym"
-path="res://.godot/imported/Cosmo.jpg-63f0110ddcdf8ee94db1417d77692857.ctex"
+uid="uid://bcb35bl0gp7jy"
+path="res://.godot/imported/Boom2.png-cb8d3256936fc0f8056d5b3811a05292.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Illustrations/Cosmo.jpg"
-dest_files=["res://.godot/imported/Cosmo.jpg-63f0110ddcdf8ee94db1417d77692857.ctex"]
+source_file="res://Assets/Images/Emotions/Boom2.png"
+dest_files=["res://.godot/imported/Boom2.png-cb8d3256936fc0f8056d5b3811a05292.ctex"]
 
 [params]
 
