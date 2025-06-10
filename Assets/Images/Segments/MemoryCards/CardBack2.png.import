@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br647opf4wo16"
-path="res://.godot/imported/Think.png-9d7805b06294a35eb8578a55acaf8fa9.ctex"
+uid="uid://b2vu677gjjw1m"
+path="res://.godot/imported/CardBack2.png-ab1425fd8ff84dce4276226e00555c94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Emotions/Think.png"
-dest_files=["res://.godot/imported/Think.png-9d7805b06294a35eb8578a55acaf8fa9.ctex"]
+source_file="res://Assets/Images/Segments/MemoryCards/CardBack2.png"
+dest_files=["res://.godot/imported/CardBack2.png-ab1425fd8ff84dce4276226e00555c94.ctex"]
 
 [params]
 

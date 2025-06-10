@@ -4,7 +4,7 @@ extends Node
 
 var LevelsInfo:={ #
 	1:["Первая встреча",[ ["Monolog",11],["Monolog",12],["Connector",0],["Monolog",14],["Monolog",15],["Puzzle",0],["Monolog",10],["Monolog",16],["TransitionPuzzle",0],["Monolog",13],["Monolog",18],["Repairing",0],["MemoryCards",0],["Monolog",19],["MemoryCards",1], ["Monolog",17] ]],
-	2:["Эксперименты",[["Monolog",20],["Monolog",21],["Connector",1],["Monolog",22],["Monolog",23],["Puzzle",1],["Monolog",24],["Monolog",25],["TransitionPuzzle",1],["Monolog",26],["Repairing",1],["MemoryCards",2],       ["Monolog",17] ]],
+	2:["Эксперименты",  [["Monolog",20],["Monolog",21],["Connector",1],["Monolog",22],["Monolog",23],["Puzzle",1],["Monolog",24],["Monolog",25],["TransitionPuzzle",1],["Monolog",26],["Repairing",1],["MemoryCards",2],["Monolog",27],["Quiz",0],  ["Monolog",28] ]],
 	3:[],
 	4:[],
 	5:[],
@@ -48,6 +48,8 @@ var SegmentsInfo:={
 		24:["Happy","Какой ты молодец!\nТы спас наш эксперимент","Ура!"],
 		25:["Fly","Ой, посмотри, кто там летает!","(посмотреть наверх)"],
 		26:["Сhemical","Это я проводил опыт по отправлению\nсвоих друзей в космос","Давай и мы полетим"],
+		27:["Think","Ого, тебя сегодня не остановить...\nА сможешь разгадать мою загадку? ","Давай попробую"],
+		28:["Happy","У тебя получилось!\nНа следующем занятии придумаю что-нибудь посложнее","Выход"],
 	},
 	"Connector":{ #Images name + Text
 		"preload":"res://Scenes/Segments/Connector.tscn",
@@ -74,12 +76,19 @@ var SegmentsInfo:={
 		0:["РАКЕТА","ГОЛОВА","МАШИНА","КОНФЕТА","ЗАБОР"],
 		1:["ЗЕФИР","МАЛИНА","СОБАКА","РАДУГА","ЖАБА"],
 	},
-	
+	"Quiz":{ #Images name + Text
+		"preload":"res://Scenes/Segments/Quiz.tscn",
+		0:[["ГРОМ-КО   КАШ-ЛЯ-ЕТ   СЕ-РЁ-ЖА.\nУ   НЕ-ГО   БРОН-ХИТ,   ПО-ХО-ЖЕ.\nВ   ПО-ЛИК-ЛИ-НИ-КУ   ЗВО-НЯТ,\nА   СЕ-РЁ-ЖЕ   ГО-ВО-РЯТ:\n— ТЫ   НЕ   БОЙ-СЯ  И   НЕ   ПЛАЧЬ –\nК   ТЕ-БЕ   Е-ДЕТ   ДОБ-РЫЙ…",\
+		["МЯЧ","ВРАЧ","ГНОМ"],1]],
+		1:[["В  НЁМ   У-ЧЕБ-НИ-КИ  И  КРАС-КИ,\nИН-ТЕ-РЕС-НЕЙ-ШИ-Е   СКАЗ-КИ,\nНУ  А  ЕС-ЛИ   У-МУД-РИТЬ-СЯ,\nМО-ЖЕТ   ФОР-МА   ПО-МЕС-ТИТЬ-СЯ.",\
+		["РЮКЗАК","ПЕНАЛ","ЯЩИК"],0]],
+		
+	},
 	
 	"TransitionPuzzle":{ #Images name + Text
 		"preload":"res://Scenes/Segments/TransitionPuzzle.tscn",
 		0:["res://Assets/Images/Illustrations/Motherhood.jpg",Vector2(2,4)],
-		1:["res://Assets/Images/Illustrations/Cosmo.jpg",Vector2(2,5)],
+		1:["res://Assets/Images/Illustrations/Cosmo.jpg",Vector2(2,3)],
 	},
 	"MemoryCards":{ #Images name + Text
 		"preload":"res://Scenes/Segments/MemoryCards.tscn",
