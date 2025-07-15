@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvtth8cbme245"]
+
+[ext_resource type="Texture2D" uid="uid://ba3l608kjxjap" path="res://Assets/Images/Segments/Notesy/Notes.png" id="1_66qxi"]
+[ext_resource type="Script" uid="uid://cijydxtbdx2kh" path="res://Scenes/Parts/Notes.gd" id="1_piscq"]
+
+[node name="Notes" type="TextureRect"]
+pivot_offset = Vector2(280, 250)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+texture = ExtResource("1_66qxi")
+script = ExtResource("1_piscq")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(153, 250)
+
+[node name="Words" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 133.0
+offset_right = 427.0
+offset_bottom = 210.0
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(75, 0)
+mouse_filter = 2
+alignment = 1
+
+[node name="1" type="Label" parent="Words"]
+layout_mode = 2
+text = "Test"
+horizontal_alignment = 1
+
+[node name="2" type="Label" parent="Words"]
+layout_mode = 2
+text = "Test"
+horizontal_alignment = 1
+
+[node name="3" type="Label" parent="Words"]
+layout_mode = 2
+text = "Test"
+horizontal_alignment = 1

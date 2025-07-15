@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br647opf4wo16"
-path="res://.godot/imported/think.png-fa111085c4b6a68b3cc1eeacee5462bc.ctex"
+uid="uid://ba3l608kjxjap"
+path="res://.godot/imported/Notes.png-f4c27ff5145b7a21e5527f89205846ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Emotions/think.png"
-dest_files=["res://.godot/imported/think.png-fa111085c4b6a68b3cc1eeacee5462bc.ctex"]
+source_file="res://Assets/Images/Segments/Notesy/Notes.png"
+dest_files=["res://.godot/imported/Notes.png-f4c27ff5145b7a21e5527f89205846ff.ctex"]
 
 [params]
 

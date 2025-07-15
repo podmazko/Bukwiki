@@ -1,3 +1,3 @@
 extends Node
 
-var LevelsCompleted:=1
+var LevelsCompleted:=2

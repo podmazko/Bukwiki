@@ -107,49 +107,50 @@ func appear_anim()->void:
 
 
 func object_input(event:InputEvent,object)->void:
-	if event.is_pressed():
-		
-		Globals.emit_signal("SFX","D")
-		
-		if Globals.current_selected==null: #then select
-			Globals.current_selected=object
-			object.swap()
-		else:
-			if Globals.current_selected==object: #same - deselect
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			
+			Globals.emit_signal("SFX","D")
+			
+			if Globals.current_selected==null: #then select
+				Globals.current_selected=object
 				object.swap()
-				Globals.current_selected=null
-
 			else:
-				var _tween:Tween=create_tween().set_parallel(true)
-				if Globals.current_selected.word==object.word: # right anwer
+				if Globals.current_selected==object: #same - deselect
 					object.swap()
-					Globals.emit_signal("SFX","A")
-
-					_tween.tween_property(Mage,"position:y",Mage.position.y,0.7).from(Mage.position.y-50)\
-							.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
-					_tween.tween_property(Mage,"scale",Vector2(1,1),0.8).from(Vector2(0.94,1.06))\
-							.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
-					_tween.tween_property(Mage,"rotation_degrees",0,0.9).from(6)\
-							.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
-					
-					for i in [object,Globals.current_selected]: #right anim
-						i.word="" #its will block InputsUnbloking
-						i.mouse_filter=2
-						_tween.tween_property(i,"modulate",Color(1,1,1,0.3),0.8).from(Color(1.2,1.2,1.2,1.0))
-					
 					Globals.current_selected=null
-					LevelCounter-=1
-					if LevelCounter==0:
-						_tween.tween_callback(finish_level).set_delay(1.0)
-				else: #wrong answer - change selection
-					object.swap()
-					Globals.current_selected.swap()
-					#wrong anim
-					_tween.tween_property(Globals.current_selected,"rotation_degrees",0,0.6).from(-15)\
-							.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
-					_tween.tween_property(Globals.current_selected,"modulate",Color(1,1,1,1.0),0.5).from(Color(1.5,1.0,1.0,1.0))
 
-					Globals.current_selected=object
+				else:
+					var _tween:Tween=create_tween().set_parallel(true)
+					if Globals.current_selected.word==object.word: # right anwer
+						object.swap()
+						Globals.emit_signal("SFX","A")
+
+						_tween.tween_property(Mage,"position:y",Mage.position.y,0.7).from(Mage.position.y-50)\
+								.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
+						_tween.tween_property(Mage,"scale",Vector2(1,1),0.8).from(Vector2(0.94,1.06))\
+								.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
+						_tween.tween_property(Mage,"rotation_degrees",0,0.9).from(6)\
+								.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
+						
+						for i in [object,Globals.current_selected]: #right anim
+							i.word="" #its will block InputsUnbloking
+							i.mouse_filter=2
+							_tween.tween_property(i,"modulate",Color(1,1,1,0.3),0.8).from(Color(1.2,1.2,1.2,1.0))
+						
+						Globals.current_selected=null
+						LevelCounter-=1
+						if LevelCounter==0:
+							_tween.tween_callback(finish_level).set_delay(1.0)
+					else: #wrong answer - change selection
+						object.swap()
+						Globals.current_selected.swap()
+						#wrong anim
+						_tween.tween_property(Globals.current_selected,"rotation_degrees",0,0.6).from(-15)\
+								.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+						_tween.tween_property(Globals.current_selected,"modulate",Color(1,1,1,1.0),0.5).from(Color(1.5,1.0,1.0,1.0))
+
+						Globals.current_selected=object
 
 
 func finish_level()->void:

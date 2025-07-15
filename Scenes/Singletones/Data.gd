@@ -5,7 +5,7 @@ extends Node
 var LevelsInfo:={ #
 	1:["Первая встреча",[ ["Monolog",11],["Monolog",12],["Connector",0],["Monolog",14],["Monolog",15],["Puzzle",0],["Monolog",10],["Monolog",16],["TransitionPuzzle",0],["Monolog",13],["Monolog",18],["Repairing",0],["MemoryCards",0],["Monolog",19],["MemoryCards",1], ["Monolog",17] ]],
 	2:["Эксперименты",  [["Monolog",20],["Monolog",21],["Connector",1],["Monolog",22],["Monolog",23],["Puzzle",1],["Monolog",24],["Monolog",25],["TransitionPuzzle",1],["Monolog",26],["Repairing",1],["MemoryCards",2],["Monolog",27],["Quiz",0],  ["Monolog",28] ]],
-	3:[],
+	3:["Головоломка",[["Notesy",0], ]],
 	4:[],
 	5:[],
 	6:[],
@@ -95,6 +95,10 @@ var SegmentsInfo:={
 		0:[Vector2(2,2),0.0,["", "А пока летим,\nдавай рассматривать звезды!"]], #grid size and difficilty
 		1:[Vector2(4,2),0.05,[]], #grid size and difficilty
 		2:[Vector2(4,3),0.0,["", "Смотри, сколько сегодня звезд на небе!"]],
+	},
+	"Notesy":{ #Images name + Text
+		"preload":"res://Scenes/Segments/Notesy.tscn",
+		0:[Vector2(2,2),["ВРАЧ","ГОЛОВА","ВОЛК","КОШКА"],["Fear", "Пока тебя не было я позабывал все слова\nСможешь мне их напомнить?"]], 
 	},
 	
 }
