@@ -19,6 +19,7 @@ var base_params:=[]
 var SFXplayback:AudioStreamPlaybackPolyphonic
 
 func _ready():
+	$SkipButton.visible=Data.DEVMODE
 	Blocker.visible=false
 	LevelLabel.modulate.a=0.0
 	button_play.pressed.connect(_on_play_pressed)

@@ -77,7 +77,7 @@ func object_input(event:InputEvent,object)->void:
 			#wrong anim
 			_tween.tween_property(object,"rotation_degrees",0,0.6).from(-15)\
 					.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
-			_tween.tween_property(object,"modulate",Color(1,1,1,1.0),0.5).from(Color(1.5,1.3,1.0,1.0))
+			_tween.tween_property(object,"modulate",Color(1,1,1,1.0),0.5).from(Color(1.5,1.1,1.0,1.0))
 		
 		
 func finish_level()->void:
