@@ -8,8 +8,15 @@ var message:=[]
 
 var LevelCounter:int
 func _init_segment(_segment_info_words:Array)->void: #[(2, 2), 0.3]
+	#set character picture
+	var _char_text:String=_segment_info_words[3]
+	if _char_text!="Mage":
+		Mage.texture=load("res://Assets/Images/Emotions/"+_char_text+".png")
+		$Mage/MageLight.visible=false
+		$Mage/MageLight2.visible=false
 	Mage.modulate.a=0
 	
+	#set cards
 	var _grid:Vector2=_segment_info_words[0]
 	var _difficult:float=_segment_info_words[1]
 	message=_segment_info_words[2]

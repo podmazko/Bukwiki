@@ -1,12 +1,12 @@
 extends Node
 
-var DEVMODE:=true #true/false
+var DEVMODE:=false #true/false
 
 var LevelsInfo:={ #
 	1:["Первая встреча",[ ["Monolog",11],["Monolog",12],["Connector",0],["Monolog",14],["Monolog",15],["Puzzle",0],["Monolog",10],["Monolog",16],["TransitionPuzzle",0],["Monolog",13],["Monolog",18],["Repairing",0],["MemoryCards",0],["Monolog",19],["MemoryCards",1], ["Monolog",17] ]],
 	2:["Эксперименты",  [["Monolog",20],["Monolog",21],["Connector",1],["Monolog",22],["Monolog",23],["Puzzle",1],["Monolog",24],["Monolog",25],["TransitionPuzzle",1],["Monolog",26],["Repairing",1],["MemoryCards",2],["Monolog",27],["Quiz",0],  ["Monolog",28] ]],
-	3:["Фокусы с буквами",[["Monolog",30],["Monolog",31],["Notesy",0],["Monolog",32],["Quiz",1],["Monolog",33],["Repairing",2],["Monolog",34],["TransitionPuzzle",2],["MemoryCards",3],["Monolog",35],["Puzzle",2],["Monolog",36],["Monolog",37]]],
-	4:["Головоломка",[["Notesy",0], ]],
+	3:["Фокусы с буквами",[ ["Monolog",30],["Monolog",31],["Notesy",0],["Monolog",32],["Quiz",1],["Monolog",33],["Repairing",2],["Monolog",34],["TransitionPuzzle",2],["MemoryCards",3],["Monolog",35],["Puzzle",2],["Monolog",36],["Monolog",37] ]],
+	4:["Любимые игрушки",[["Monolog",40],["Monolog",41],["Puzzle",3],["Monolog",42],["MemoryCards",4],["Monolog",43],["Monolog",44],["TransitionPuzzle",3],["Monolog",45],["Connector",2],["Monolog",46],["Repairing",3],["Monolog",47],["Notesy",1],["Monolog",48]]],
 	5:[],
 	6:[],
 	7:[],
@@ -15,14 +15,6 @@ var LevelsInfo:={ #
 	10:[],
 	11:[],
 	12:[],
-	13:[],
-	14:[],
-	15:[],
-	16:[],
-	17:[],
-	18:[],
-	19:[],
-	20:[],
 }
 
 
@@ -58,9 +50,22 @@ var SegmentsInfo:={
 		34:["Plate","Ух ты, смотри, настоящая магия в космосе!","Посмотреть поближе"],
 		35:["Cry","Ой, я что-то наколдовал и слова в моей книжке перепутались..\nПоможешь их собрать?","Я соберу"],
 		36:["Happy","Ура, ты справился!\nТы тоже настоящий волшебник!","Спасибо"],
-		37:["Card","Сегодня мы побывали в мире магии.\nА в следующий раз отправимся в мир игрушек!","Увидимся"],	},
+		37:["Card","Сегодня мы побывали в мире магии.\nА в следующий раз отправимся в мир игрушек!","Увидимся"],
 		
 		
+		40:["Hi","Привет-привет!\nА я уже соскучился по тебе!","Привет!"],
+		41:["Toy","Давай поиграем вместе!\nСможешь узнать все мои любимые игрушки?","Смогу"],
+		42:["Happy","Ух ты! Как весело с тобой играть!","Спасибо"],
+		43:["ToyHappy","Просто класс!\nКак здорово у тебя получается!","Давай ещё"],
+		44:["Think","Я обожаю собирать пазлы!","Давай вместе"],
+		45:["BookDrop","Ой, я так веселился, что уронил книгу...","(помочь Буквику)"],
+		46:["Fly","Я обожаю летать.\nМожет, подключим ракету и отправимся в космос?","Вперёд!"],
+		47:["Plate","Только в космосе все буквы разлетелись.\nСможешь их собрать?","Собрать слово"],
+		48:["Sleep","Ой, с тобой очень круто!\nЯ так наигрался и засыпаю. Продолжим в следующий раз?","До встречи!"]
+		
+		
+		
+	},
 		
 		
 	"Connector":{ #Images name + Text
@@ -84,12 +89,14 @@ var SegmentsInfo:={
 		0:["СУНДУК","ПИРАТ","ТУЧА","ВОЛНА","ЗАМОК","КНИГА"],
 		1:["ЛАМПА","ЧАСЫ","ПЕНАЛ","РОБОТ","ТЕТРАДЬ","АРБУЗ"],
 		2:["ПИЛОТ","РЮКЗАК","МАСКА","НОСОК","ЗАБОР","ДИВАН"],
+		3:["ГОРКА","КУКЛА","РОБОТ","РАКЕТА","МАШИНА","СУНДУК"],
 	},
 	"Repairing":{ #Images name + Text
 		"preload":"res://Scenes/Segments/Repairing.tscn",
 		0:["РАКЕТА","ГОЛОВА","МАШИНА","КОНФЕТА","ЗАБОР"],
 		1:["ЗЕФИР","МАЛИНА","СОБАКА","РАДУГА","ЖАБА"],
 		2:["СОВА","ОЛЕНЬ","ПАКЕТ","ЛОДКА","КНИГА"],
+		3:["КУБИКИ","ЛОШАДЬ","ДОКТОР","СОБАКА","АНГЕЛ"],
 	},
 	"Quiz":{ #Images name + Text
 		"preload":"res://Scenes/Segments/Quiz.tscn",
@@ -105,18 +112,21 @@ var SegmentsInfo:={
 		0:["res://Assets/Images/Illustrations/Motherhood.jpg",Vector2(2,4)],
 		1:["res://Assets/Images/Illustrations/Cosmo.jpg",Vector2(2,3)],
 		2:["res://Assets/Images/Illustrations/Focus.jpg",Vector2(2,5)],
+		3:["res://Assets/Images/Illustrations/Toy.jpg",Vector2(2,5)],
 	},
 	
 	"MemoryCards":{ #Images name + Text
 		"preload":"res://Scenes/Segments/MemoryCards.tscn",
-		0:[Vector2(2,2),0.0,["", "А пока летим,\nдавай рассматривать звезды!"]], #grid size and difficilty
-		1:[Vector2(4,2),0.05,[]], #grid size and difficilty
-		2:[Vector2(4,3),0.0,["", "Смотри, сколько сегодня звезд на небе!"]],
-		3:[Vector2(4,3),0.0,["", "А сможешь разгадать фокус с картами?"]],
+		0:[Vector2(2,2),0.0,["", "А пока летим,\nдавай рассматривать звезды!"],"Mage"], #grid size and difficilty
+		1:[Vector2(4,2),0.05,[],"Mage"], #grid size and difficilty
+		2:[Vector2(4,3),0.0,["", "Смотри, сколько сегодня звезд на небе!"],"Mage"],
+		3:[Vector2(4,3),0.0,["", "А сможешь разгадать фокус с картами?"],"Mage"],
+		4:[Vector2(4,2),0.05,["", "А запомнишь все карточки, что я нарисовал?\n"],"Paint"],
 	},
 	"Notesy":{ #Images name + Text
 		"preload":"res://Scenes/Segments/Notesy.tscn",
-		0:[Vector2(2,2),["ВРАЧ","ГОЛОВА","ВОЛК","КОШКА"],["Focus", "Я заколдовал все слова,     \nсможешь найти правильные?      "]], 
+		0:[Vector2(2,2),["ВРАЧ","ГОЛОВА","ВОЛК","КОШКА"],["Focus", "Я заколдовал все слова,     \nсможешь найти правильные?      "]],
+		1:[Vector2(2,2),["ЗВЕЗДА","КЕПКА","ГРИБ","АРБУЗ"],["Focus", "Все слова перепутались,     \nсможешь найти правильные?      "]], 
 	},
 	
 }

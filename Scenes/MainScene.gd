@@ -49,10 +49,10 @@ func _setup_levels_buttons()->void:
 	for i in Data.LevelsInfo:
 		var _ints:Button=LevelButton.instantiate()
 		levels_buttons.add_child(_ints)
-		var _row:int=int((i-1)/5)
+		var _row:int=int((i-1)/4)
 		_ints.text=str(i)
-		_ints.position.x=(i-_row*5)*280
-		_ints.position.y=340*_row
+		_ints.position.x=(i-_row*4)*280
+		_ints.position.y=320*_row
 		
 		_ints.pressed.connect(start_level.bind(i))
 		
