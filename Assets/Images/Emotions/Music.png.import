@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8pjjoee24aad"
-path="res://.godot/imported/candy.png-8c5e70c06e63f8f991c2298b83e9cd2d.ctex"
+uid="uid://xlduaphrf8ti"
+path="res://.godot/imported/Music.png-09362068bdd6b16bfd2279c6b95ed85c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Objects/candy.png"
-dest_files=["res://.godot/imported/candy.png-8c5e70c06e63f8f991c2298b83e9cd2d.ctex"]
+source_file="res://Assets/Images/Emotions/Music.png"
+dest_files=["res://.godot/imported/Music.png-09362068bdd6b16bfd2279c6b95ed85c.ctex"]
 
 [params]
 

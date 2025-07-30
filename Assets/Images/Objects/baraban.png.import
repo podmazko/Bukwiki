@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8pjjoee24aad"
-path="res://.godot/imported/candy.png-8c5e70c06e63f8f991c2298b83e9cd2d.ctex"
+uid="uid://00rh57fm1da3"
+path="res://.godot/imported/baraban.png-f9c01d5243f7f27c2b79f9aa9c697a57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Objects/candy.png"
-dest_files=["res://.godot/imported/candy.png-8c5e70c06e63f8f991c2298b83e9cd2d.ctex"]
+source_file="res://Assets/Images/Objects/baraban.png"
+dest_files=["res://.godot/imported/baraban.png-f9c01d5243f7f27c2b79f9aa9c697a57.ctex"]
 
 [params]
 

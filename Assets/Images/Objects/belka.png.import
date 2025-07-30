@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8pjjoee24aad"
-path="res://.godot/imported/candy.png-8c5e70c06e63f8f991c2298b83e9cd2d.ctex"
+uid="uid://dshn2r6gaty60"
+path="res://.godot/imported/belka.png-836a8500b87c4885181776710538c17c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Objects/candy.png"
-dest_files=["res://.godot/imported/candy.png-8c5e70c06e63f8f991c2298b83e9cd2d.ctex"]
+source_file="res://Assets/Images/Objects/belka.png"
+dest_files=["res://.godot/imported/belka.png-836a8500b87c4885181776710538c17c.ctex"]
 
 [params]
 

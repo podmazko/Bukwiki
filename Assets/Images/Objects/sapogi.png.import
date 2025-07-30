@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8pjjoee24aad"
-path="res://.godot/imported/candy.png-8c5e70c06e63f8f991c2298b83e9cd2d.ctex"
+uid="uid://cbftgfqdr383g"
+path="res://.godot/imported/sapogi.png-33561a8ffd36f744005b141bb67d5692.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Objects/candy.png"
-dest_files=["res://.godot/imported/candy.png-8c5e70c06e63f8f991c2298b83e9cd2d.ctex"]
+source_file="res://Assets/Images/Objects/sapogi.png"
+dest_files=["res://.godot/imported/sapogi.png-33561a8ffd36f744005b141bb67d5692.ctex"]
 
 [params]
 

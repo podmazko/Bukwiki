@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8pjjoee24aad"
-path="res://.godot/imported/candy.png-8c5e70c06e63f8f991c2298b83e9cd2d.ctex"
+uid="uid://c31laboba56ik"
+path="res://.godot/imported/varezka.png-85f481626437df35d8b8e9a598be2b08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Objects/candy.png"
-dest_files=["res://.godot/imported/candy.png-8c5e70c06e63f8f991c2298b83e9cd2d.ctex"]
+source_file="res://Assets/Images/Objects/varezka.png"
+dest_files=["res://.godot/imported/varezka.png-85f481626437df35d8b8e9a598be2b08.ctex"]
 
 [params]
 
