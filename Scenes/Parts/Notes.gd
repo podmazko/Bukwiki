@@ -20,6 +20,7 @@ func _init_notes(_word:String,_prnt:Control)->void:
 	var _p1=_word.right(3+_right_n).left(1)
 	var _variants:=[_left_size+_p1+_p2+_p3+_right_size,_left_size+_p2+_p3+_p1+_right_size,_left_size+_p3+_p1+_p2+_right_size]
 	
+	
 	_Labels.shuffle()
 	right_answer_node=_Labels[0]
 	for i in 3:
