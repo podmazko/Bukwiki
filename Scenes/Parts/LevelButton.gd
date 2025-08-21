@@ -1,7 +1,7 @@
 extends Button
 
 
-func set_status(_status:int=0)->void: #0-done, 1-open 2-c;osed
+func set_status(_status:int=0)->void: #0-done, 1-open 2-closed
 	$Star.visible= (_status==0)
 	disabled= (_status==2)
 			

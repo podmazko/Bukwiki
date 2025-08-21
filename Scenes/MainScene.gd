@@ -19,7 +19,11 @@ var base_params:=[]
 
 var SFXplayback:AudioStreamPlaybackPolyphonic
 
+var save_dir := OS.get_user_data_dir().path_join("Saves")
+
 func _ready():
+	_set_saving_system()
+	
 	$SkipButton.visible=Data.DEVMODE
 	Blocker.visible=false
 	LevelLabel.modulate.a=0.0
@@ -29,12 +33,31 @@ func _ready():
 	Globals.NextSegment.connect(next_segment)
 	
 	LabelText.pivot_offset=LabelText.size*Vector2(0.5,0.5)
+	LabelText.scale=Vector2(0.5,0)
 	base_params.append(menu_buttons.position.x)
 	base_params.append(menu_char.position.x)
 	_setup_levels_buttons()
 	
 	#set SFX
 	Globals.SFX.connect(SFX)
+	
+	
+func _set_saving_system()->void:
+	SaveHandler.set_file_dir(save_dir)
+	SaveHandler.set_file_name("LevelsCompleted")
+
+	if !Data.DEVMODE: #in dev you can select any level
+		PlayerData.LevelsCompleted=0
+		var _result=int(SaveHandler.create_new_save())
+		if _result==0: #new save
+			_save_game()
+		else:#load old save
+			_load_game()
+			
+func _save_game()->void:
+	SaveHandler.save_data({"LevelsCompleted":PlayerData.LevelsCompleted})
+func _load_game()->void:
+	PlayerData.LevelsCompleted=SaveHandler.get_data("LevelsCompleted", null)[1]
 	
 	
 func SFX(_type:String)->void:
@@ -53,11 +76,21 @@ func _setup_levels_buttons()->void:
 		_ints.position.y=320*_row
 		
 		_ints.pressed.connect(start_level.bind(i))
-		
-		if i==(PlayerData.LevelsCompleted+1):
-			_ints.set_status(1)
-		elif i>(PlayerData.LevelsCompleted+1):
-			_ints.set_status(2)
+
+		if !Data.DEMO:#
+			if i==(PlayerData.LevelsCompleted+1):
+				_ints.set_status(1)
+			elif i>(PlayerData.LevelsCompleted+1):
+				_ints.set_status(2)
+		else: #DEMO
+			if i==1:
+				if PlayerData.LevelsCompleted==0:
+					_ints.set_status(1)
+				else:
+					_ints.set_status(0)
+			else:
+				_ints.set_status(2)
+				
 	levels_buttons.visible=false
 
 
@@ -75,7 +108,8 @@ func _on_play_pressed(): #show level choosing UI
 	_tween.tween_property(menu_char, "position:y", 400, 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
 	_tween.tween_property(menu_char, "scale", Vector2(0.8,0.8), 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
 	#choose level label
-	_tween.tween_property(LabelText, "scale", Vector2(1,1), 1.0).from(Vector2(0.5,0.0)).set_delay(1.2)\
+	LabelText.scale=Vector2(0.5,0.0)
+	_tween.tween_property(LabelText, "scale", Vector2(1,1), 1.0).set_delay(1.2)\
 			.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 	_tween.tween_callback(Globals.emit_signal.bind("SFX","B")).set_delay(1.2)
 	
@@ -185,7 +219,7 @@ func on_level_finished()->void:
 			if Globals.current_level_in_play<Data.LevelsInfo.size(): #unlock next
 				var _button_next:Button=levels_buttons.get_child(Globals.current_level_in_play)
 				_button_next.set_status(1)
-
+		_save_game()
 
 @onready var Blocker:Control = $Blocker
 var blocker_tween:Tween
